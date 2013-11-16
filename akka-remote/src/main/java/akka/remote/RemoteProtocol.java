@@ -8,20 +8,46 @@ public final class RemoteProtocol {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
+  /**
+   * Protobuf enum {@code CommandType}
+   *
+   * <pre>
+   **
+   * Defines the type of the RemoteControlProtocol command type
+   * </pre>
+   */
   public enum CommandType
       implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>CONNECT = 1;</code>
+     */
     CONNECT(0, 1),
+    /**
+     * <code>SHUTDOWN = 2;</code>
+     */
     SHUTDOWN(1, 2),
+    /**
+     * <code>HEARTBEAT = 3;</code>
+     */
     HEARTBEAT(2, 3),
     ;
-    
+
+    /**
+     * <code>CONNECT = 1;</code>
+     */
     public static final int CONNECT_VALUE = 1;
+    /**
+     * <code>SHUTDOWN = 2;</code>
+     */
     public static final int SHUTDOWN_VALUE = 2;
+    /**
+     * <code>HEARTBEAT = 3;</code>
+     */
     public static final int HEARTBEAT_VALUE = 3;
-    
-    
+
+
     public final int getNumber() { return value; }
-    
+
     public static CommandType valueOf(int value) {
       switch (value) {
         case 1: return CONNECT;
@@ -30,7 +56,7 @@ public final class RemoteProtocol {
         default: return null;
       }
     }
-    
+
     public static com.google.protobuf.Internal.EnumLiteMap<CommandType>
         internalGetValueMap() {
       return internalValueMap;
@@ -42,7 +68,7 @@ public final class RemoteProtocol {
               return CommandType.valueOf(number);
             }
           };
-    
+
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       return getDescriptor().getValues().get(index);
@@ -55,11 +81,9 @@ public final class RemoteProtocol {
         getDescriptor() {
       return akka.remote.RemoteProtocol.getDescriptor().getEnumTypes().get(0);
     }
-    
-    private static final CommandType[] VALUES = {
-      CONNECT, SHUTDOWN, HEARTBEAT, 
-    };
-    
+
+    private static final CommandType[] VALUES = values();
+
     public static CommandType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
@@ -68,32 +92,58 @@ public final class RemoteProtocol {
       }
       return VALUES[desc.getIndex()];
     }
-    
+
     private final int index;
     private final int value;
-    
+
     private CommandType(int index, int value) {
       this.index = index;
       this.value = value;
     }
-    
+
     // @@protoc_insertion_point(enum_scope:CommandType)
   }
-  
+
+  /**
+   * Protobuf enum {@code ReplicationStorageType}
+   *
+   * <pre>
+   **
+   * Defines the type of the ReplicationStorage
+   * </pre>
+   */
   public enum ReplicationStorageType
       implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>TRANSIENT = 1;</code>
+     */
     TRANSIENT(0, 1),
+    /**
+     * <code>TRANSACTION_LOG = 2;</code>
+     */
     TRANSACTION_LOG(1, 2),
+    /**
+     * <code>DATA_GRID = 3;</code>
+     */
     DATA_GRID(2, 3),
     ;
-    
+
+    /**
+     * <code>TRANSIENT = 1;</code>
+     */
     public static final int TRANSIENT_VALUE = 1;
+    /**
+     * <code>TRANSACTION_LOG = 2;</code>
+     */
     public static final int TRANSACTION_LOG_VALUE = 2;
+    /**
+     * <code>DATA_GRID = 3;</code>
+     */
     public static final int DATA_GRID_VALUE = 3;
-    
-    
+
+
     public final int getNumber() { return value; }
-    
+
     public static ReplicationStorageType valueOf(int value) {
       switch (value) {
         case 1: return TRANSIENT;
@@ -102,7 +152,7 @@ public final class RemoteProtocol {
         default: return null;
       }
     }
-    
+
     public static com.google.protobuf.Internal.EnumLiteMap<ReplicationStorageType>
         internalGetValueMap() {
       return internalValueMap;
@@ -114,7 +164,7 @@ public final class RemoteProtocol {
               return ReplicationStorageType.valueOf(number);
             }
           };
-    
+
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       return getDescriptor().getValues().get(index);
@@ -127,11 +177,9 @@ public final class RemoteProtocol {
         getDescriptor() {
       return akka.remote.RemoteProtocol.getDescriptor().getEnumTypes().get(1);
     }
-    
-    private static final ReplicationStorageType[] VALUES = {
-      TRANSIENT, TRANSACTION_LOG, DATA_GRID, 
-    };
-    
+
+    private static final ReplicationStorageType[] VALUES = values();
+
     public static ReplicationStorageType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
@@ -140,30 +188,50 @@ public final class RemoteProtocol {
       }
       return VALUES[desc.getIndex()];
     }
-    
+
     private final int index;
     private final int value;
-    
+
     private ReplicationStorageType(int index, int value) {
       this.index = index;
       this.value = value;
     }
-    
+
     // @@protoc_insertion_point(enum_scope:ReplicationStorageType)
   }
-  
+
+  /**
+   * Protobuf enum {@code ReplicationStrategyType}
+   *
+   * <pre>
+   **
+   * Defines the type of the ReplicationStrategy
+   * </pre>
+   */
   public enum ReplicationStrategyType
       implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>WRITE_THROUGH = 1;</code>
+     */
     WRITE_THROUGH(0, 1),
+    /**
+     * <code>WRITE_BEHIND = 2;</code>
+     */
     WRITE_BEHIND(1, 2),
     ;
-    
+
+    /**
+     * <code>WRITE_THROUGH = 1;</code>
+     */
     public static final int WRITE_THROUGH_VALUE = 1;
+    /**
+     * <code>WRITE_BEHIND = 2;</code>
+     */
     public static final int WRITE_BEHIND_VALUE = 2;
-    
-    
+
+
     public final int getNumber() { return value; }
-    
+
     public static ReplicationStrategyType valueOf(int value) {
       switch (value) {
         case 1: return WRITE_THROUGH;
@@ -171,7 +239,7 @@ public final class RemoteProtocol {
         default: return null;
       }
     }
-    
+
     public static com.google.protobuf.Internal.EnumLiteMap<ReplicationStrategyType>
         internalGetValueMap() {
       return internalValueMap;
@@ -183,7 +251,7 @@ public final class RemoteProtocol {
               return ReplicationStrategyType.valueOf(number);
             }
           };
-    
+
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       return getDescriptor().getValues().get(index);
@@ -196,11 +264,9 @@ public final class RemoteProtocol {
         getDescriptor() {
       return akka.remote.RemoteProtocol.getDescriptor().getEnumTypes().get(2);
     }
-    
-    private static final ReplicationStrategyType[] VALUES = {
-      WRITE_THROUGH, WRITE_BEHIND, 
-    };
-    
+
+    private static final ReplicationStrategyType[] VALUES = values();
+
     public static ReplicationStrategyType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
@@ -209,86 +275,210 @@ public final class RemoteProtocol {
       }
       return VALUES[desc.getIndex()];
     }
-    
+
     private final int index;
     private final int value;
-    
+
     private ReplicationStrategyType(int index, int value) {
       this.index = index;
       this.value = value;
     }
-    
+
     // @@protoc_insertion_point(enum_scope:ReplicationStrategyType)
   }
-  
+
   public interface AkkaRemoteProtocolOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // optional .RemoteMessageProtocol message = 1;
+    /**
+     * <code>optional .RemoteMessageProtocol message = 1;</code>
+     */
     boolean hasMessage();
+    /**
+     * <code>optional .RemoteMessageProtocol message = 1;</code>
+     */
     akka.remote.RemoteProtocol.RemoteMessageProtocol getMessage();
+    /**
+     * <code>optional .RemoteMessageProtocol message = 1;</code>
+     */
     akka.remote.RemoteProtocol.RemoteMessageProtocolOrBuilder getMessageOrBuilder();
-    
+
     // optional .RemoteControlProtocol instruction = 2;
+    /**
+     * <code>optional .RemoteControlProtocol instruction = 2;</code>
+     */
     boolean hasInstruction();
+    /**
+     * <code>optional .RemoteControlProtocol instruction = 2;</code>
+     */
     akka.remote.RemoteProtocol.RemoteControlProtocol getInstruction();
+    /**
+     * <code>optional .RemoteControlProtocol instruction = 2;</code>
+     */
     akka.remote.RemoteProtocol.RemoteControlProtocolOrBuilder getInstructionOrBuilder();
   }
+  /**
+   * Protobuf type {@code AkkaRemoteProtocol}
+   */
   public static final class AkkaRemoteProtocol extends
       com.google.protobuf.GeneratedMessage
       implements AkkaRemoteProtocolOrBuilder {
     // Use AkkaRemoteProtocol.newBuilder() to construct.
-    private AkkaRemoteProtocol(Builder builder) {
+    private AkkaRemoteProtocol(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private AkkaRemoteProtocol(boolean noInit) {}
-    
+    private AkkaRemoteProtocol(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final AkkaRemoteProtocol defaultInstance;
     public static AkkaRemoteProtocol getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public AkkaRemoteProtocol getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AkkaRemoteProtocol(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              akka.remote.RemoteProtocol.RemoteMessageProtocol.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = message_.toBuilder();
+              }
+              message_ = input.readMessage(akka.remote.RemoteProtocol.RemoteMessageProtocol.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(message_);
+                message_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 18: {
+              akka.remote.RemoteProtocol.RemoteControlProtocol.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = instruction_.toBuilder();
+              }
+              instruction_ = input.readMessage(akka.remote.RemoteProtocol.RemoteControlProtocol.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(instruction_);
+                instruction_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return akka.remote.RemoteProtocol.internal_static_AkkaRemoteProtocol_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return akka.remote.RemoteProtocol.internal_static_AkkaRemoteProtocol_fieldAccessorTable;
+      return akka.remote.RemoteProtocol.internal_static_AkkaRemoteProtocol_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              akka.remote.RemoteProtocol.AkkaRemoteProtocol.class, akka.remote.RemoteProtocol.AkkaRemoteProtocol.Builder.class);
     }
-    
+
+    public static com.google.protobuf.Parser<AkkaRemoteProtocol> PARSER =
+        new com.google.protobuf.AbstractParser<AkkaRemoteProtocol>() {
+      public AkkaRemoteProtocol parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AkkaRemoteProtocol(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AkkaRemoteProtocol> getParserForType() {
+      return PARSER;
+    }
+
     private int bitField0_;
     // optional .RemoteMessageProtocol message = 1;
     public static final int MESSAGE_FIELD_NUMBER = 1;
     private akka.remote.RemoteProtocol.RemoteMessageProtocol message_;
+    /**
+     * <code>optional .RemoteMessageProtocol message = 1;</code>
+     */
     public boolean hasMessage() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
+    /**
+     * <code>optional .RemoteMessageProtocol message = 1;</code>
+     */
     public akka.remote.RemoteProtocol.RemoteMessageProtocol getMessage() {
       return message_;
     }
+    /**
+     * <code>optional .RemoteMessageProtocol message = 1;</code>
+     */
     public akka.remote.RemoteProtocol.RemoteMessageProtocolOrBuilder getMessageOrBuilder() {
       return message_;
     }
-    
+
     // optional .RemoteControlProtocol instruction = 2;
     public static final int INSTRUCTION_FIELD_NUMBER = 2;
     private akka.remote.RemoteProtocol.RemoteControlProtocol instruction_;
+    /**
+     * <code>optional .RemoteControlProtocol instruction = 2;</code>
+     */
     public boolean hasInstruction() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
+    /**
+     * <code>optional .RemoteControlProtocol instruction = 2;</code>
+     */
     public akka.remote.RemoteProtocol.RemoteControlProtocol getInstruction() {
       return instruction_;
     }
+    /**
+     * <code>optional .RemoteControlProtocol instruction = 2;</code>
+     */
     public akka.remote.RemoteProtocol.RemoteControlProtocolOrBuilder getInstructionOrBuilder() {
       return instruction_;
     }
-    
+
     private void initFields() {
       message_ = akka.remote.RemoteProtocol.RemoteMessageProtocol.getDefaultInstance();
       instruction_ = akka.remote.RemoteProtocol.RemoteControlProtocol.getDefaultInstance();
@@ -297,7 +487,7 @@ public final class RemoteProtocol {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-      
+
       if (hasMessage()) {
         if (!getMessage().isInitialized()) {
           memoizedIsInitialized = 0;
@@ -313,7 +503,7 @@ public final class RemoteProtocol {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -325,12 +515,12 @@ public final class RemoteProtocol {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -344,94 +534,83 @@ public final class RemoteProtocol {
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static akka.remote.RemoteProtocol.AkkaRemoteProtocol parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static akka.remote.RemoteProtocol.AkkaRemoteProtocol parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.AkkaRemoteProtocol parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static akka.remote.RemoteProtocol.AkkaRemoteProtocol parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.AkkaRemoteProtocol parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static akka.remote.RemoteProtocol.AkkaRemoteProtocol parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.AkkaRemoteProtocol parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static akka.remote.RemoteProtocol.AkkaRemoteProtocol parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.AkkaRemoteProtocol parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static akka.remote.RemoteProtocol.AkkaRemoteProtocol parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(akka.remote.RemoteProtocol.AkkaRemoteProtocol prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code AkkaRemoteProtocol}
+     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements akka.remote.RemoteProtocol.AkkaRemoteProtocolOrBuilder {
@@ -439,18 +618,21 @@ public final class RemoteProtocol {
           getDescriptor() {
         return akka.remote.RemoteProtocol.internal_static_AkkaRemoteProtocol_descriptor;
       }
-      
+
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return akka.remote.RemoteProtocol.internal_static_AkkaRemoteProtocol_fieldAccessorTable;
+        return akka.remote.RemoteProtocol.internal_static_AkkaRemoteProtocol_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                akka.remote.RemoteProtocol.AkkaRemoteProtocol.class, akka.remote.RemoteProtocol.AkkaRemoteProtocol.Builder.class);
       }
-      
+
       // Construct using akka.remote.RemoteProtocol.AkkaRemoteProtocol.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -463,7 +645,7 @@ public final class RemoteProtocol {
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         if (messageBuilder_ == null) {
@@ -480,20 +662,20 @@ public final class RemoteProtocol {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return akka.remote.RemoteProtocol.AkkaRemoteProtocol.getDescriptor();
+        return akka.remote.RemoteProtocol.internal_static_AkkaRemoteProtocol_descriptor;
       }
-      
+
       public akka.remote.RemoteProtocol.AkkaRemoteProtocol getDefaultInstanceForType() {
         return akka.remote.RemoteProtocol.AkkaRemoteProtocol.getDefaultInstance();
       }
-      
+
       public akka.remote.RemoteProtocol.AkkaRemoteProtocol build() {
         akka.remote.RemoteProtocol.AkkaRemoteProtocol result = buildPartial();
         if (!result.isInitialized()) {
@@ -501,17 +683,7 @@ public final class RemoteProtocol {
         }
         return result;
       }
-      
-      private akka.remote.RemoteProtocol.AkkaRemoteProtocol buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        akka.remote.RemoteProtocol.AkkaRemoteProtocol result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
       public akka.remote.RemoteProtocol.AkkaRemoteProtocol buildPartial() {
         akka.remote.RemoteProtocol.AkkaRemoteProtocol result = new akka.remote.RemoteProtocol.AkkaRemoteProtocol(this);
         int from_bitField0_ = bitField0_;
@@ -536,7 +708,7 @@ public final class RemoteProtocol {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof akka.remote.RemoteProtocol.AkkaRemoteProtocol) {
           return mergeFrom((akka.remote.RemoteProtocol.AkkaRemoteProtocol)other);
@@ -545,7 +717,7 @@ public final class RemoteProtocol {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(akka.remote.RemoteProtocol.AkkaRemoteProtocol other) {
         if (other == akka.remote.RemoteProtocol.AkkaRemoteProtocol.getDefaultInstance()) return this;
         if (other.hasMessage()) {
@@ -557,7 +729,7 @@ public final class RemoteProtocol {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         if (hasMessage()) {
           if (!getMessage().isInitialized()) {
@@ -573,61 +745,39 @@ public final class RemoteProtocol {
         }
         return true;
       }
-      
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              akka.remote.RemoteProtocol.RemoteMessageProtocol.Builder subBuilder = akka.remote.RemoteProtocol.RemoteMessageProtocol.newBuilder();
-              if (hasMessage()) {
-                subBuilder.mergeFrom(getMessage());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setMessage(subBuilder.buildPartial());
-              break;
-            }
-            case 18: {
-              akka.remote.RemoteProtocol.RemoteControlProtocol.Builder subBuilder = akka.remote.RemoteProtocol.RemoteControlProtocol.newBuilder();
-              if (hasInstruction()) {
-                subBuilder.mergeFrom(getInstruction());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setInstruction(subBuilder.buildPartial());
-              break;
-            }
+        akka.remote.RemoteProtocol.AkkaRemoteProtocol parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (akka.remote.RemoteProtocol.AkkaRemoteProtocol) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
+
       // optional .RemoteMessageProtocol message = 1;
       private akka.remote.RemoteProtocol.RemoteMessageProtocol message_ = akka.remote.RemoteProtocol.RemoteMessageProtocol.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           akka.remote.RemoteProtocol.RemoteMessageProtocol, akka.remote.RemoteProtocol.RemoteMessageProtocol.Builder, akka.remote.RemoteProtocol.RemoteMessageProtocolOrBuilder> messageBuilder_;
+      /**
+       * <code>optional .RemoteMessageProtocol message = 1;</code>
+       */
       public boolean hasMessage() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+      /**
+       * <code>optional .RemoteMessageProtocol message = 1;</code>
+       */
       public akka.remote.RemoteProtocol.RemoteMessageProtocol getMessage() {
         if (messageBuilder_ == null) {
           return message_;
@@ -635,6 +785,9 @@ public final class RemoteProtocol {
           return messageBuilder_.getMessage();
         }
       }
+      /**
+       * <code>optional .RemoteMessageProtocol message = 1;</code>
+       */
       public Builder setMessage(akka.remote.RemoteProtocol.RemoteMessageProtocol value) {
         if (messageBuilder_ == null) {
           if (value == null) {
@@ -648,6 +801,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000001;
         return this;
       }
+      /**
+       * <code>optional .RemoteMessageProtocol message = 1;</code>
+       */
       public Builder setMessage(
           akka.remote.RemoteProtocol.RemoteMessageProtocol.Builder builderForValue) {
         if (messageBuilder_ == null) {
@@ -659,6 +815,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000001;
         return this;
       }
+      /**
+       * <code>optional .RemoteMessageProtocol message = 1;</code>
+       */
       public Builder mergeMessage(akka.remote.RemoteProtocol.RemoteMessageProtocol value) {
         if (messageBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001) &&
@@ -675,6 +834,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000001;
         return this;
       }
+      /**
+       * <code>optional .RemoteMessageProtocol message = 1;</code>
+       */
       public Builder clearMessage() {
         if (messageBuilder_ == null) {
           message_ = akka.remote.RemoteProtocol.RemoteMessageProtocol.getDefaultInstance();
@@ -685,11 +847,17 @@ public final class RemoteProtocol {
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
+      /**
+       * <code>optional .RemoteMessageProtocol message = 1;</code>
+       */
       public akka.remote.RemoteProtocol.RemoteMessageProtocol.Builder getMessageBuilder() {
         bitField0_ |= 0x00000001;
         onChanged();
         return getMessageFieldBuilder().getBuilder();
       }
+      /**
+       * <code>optional .RemoteMessageProtocol message = 1;</code>
+       */
       public akka.remote.RemoteProtocol.RemoteMessageProtocolOrBuilder getMessageOrBuilder() {
         if (messageBuilder_ != null) {
           return messageBuilder_.getMessageOrBuilder();
@@ -697,6 +865,9 @@ public final class RemoteProtocol {
           return message_;
         }
       }
+      /**
+       * <code>optional .RemoteMessageProtocol message = 1;</code>
+       */
       private com.google.protobuf.SingleFieldBuilder<
           akka.remote.RemoteProtocol.RemoteMessageProtocol, akka.remote.RemoteProtocol.RemoteMessageProtocol.Builder, akka.remote.RemoteProtocol.RemoteMessageProtocolOrBuilder> 
           getMessageFieldBuilder() {
@@ -710,14 +881,20 @@ public final class RemoteProtocol {
         }
         return messageBuilder_;
       }
-      
+
       // optional .RemoteControlProtocol instruction = 2;
       private akka.remote.RemoteProtocol.RemoteControlProtocol instruction_ = akka.remote.RemoteProtocol.RemoteControlProtocol.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           akka.remote.RemoteProtocol.RemoteControlProtocol, akka.remote.RemoteProtocol.RemoteControlProtocol.Builder, akka.remote.RemoteProtocol.RemoteControlProtocolOrBuilder> instructionBuilder_;
+      /**
+       * <code>optional .RemoteControlProtocol instruction = 2;</code>
+       */
       public boolean hasInstruction() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+      /**
+       * <code>optional .RemoteControlProtocol instruction = 2;</code>
+       */
       public akka.remote.RemoteProtocol.RemoteControlProtocol getInstruction() {
         if (instructionBuilder_ == null) {
           return instruction_;
@@ -725,6 +902,9 @@ public final class RemoteProtocol {
           return instructionBuilder_.getMessage();
         }
       }
+      /**
+       * <code>optional .RemoteControlProtocol instruction = 2;</code>
+       */
       public Builder setInstruction(akka.remote.RemoteProtocol.RemoteControlProtocol value) {
         if (instructionBuilder_ == null) {
           if (value == null) {
@@ -738,6 +918,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000002;
         return this;
       }
+      /**
+       * <code>optional .RemoteControlProtocol instruction = 2;</code>
+       */
       public Builder setInstruction(
           akka.remote.RemoteProtocol.RemoteControlProtocol.Builder builderForValue) {
         if (instructionBuilder_ == null) {
@@ -749,6 +932,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000002;
         return this;
       }
+      /**
+       * <code>optional .RemoteControlProtocol instruction = 2;</code>
+       */
       public Builder mergeInstruction(akka.remote.RemoteProtocol.RemoteControlProtocol value) {
         if (instructionBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
@@ -765,6 +951,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000002;
         return this;
       }
+      /**
+       * <code>optional .RemoteControlProtocol instruction = 2;</code>
+       */
       public Builder clearInstruction() {
         if (instructionBuilder_ == null) {
           instruction_ = akka.remote.RemoteProtocol.RemoteControlProtocol.getDefaultInstance();
@@ -775,11 +964,17 @@ public final class RemoteProtocol {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
+      /**
+       * <code>optional .RemoteControlProtocol instruction = 2;</code>
+       */
       public akka.remote.RemoteProtocol.RemoteControlProtocol.Builder getInstructionBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
         return getInstructionFieldBuilder().getBuilder();
       }
+      /**
+       * <code>optional .RemoteControlProtocol instruction = 2;</code>
+       */
       public akka.remote.RemoteProtocol.RemoteControlProtocolOrBuilder getInstructionOrBuilder() {
         if (instructionBuilder_ != null) {
           return instructionBuilder_.getMessageOrBuilder();
@@ -787,6 +982,9 @@ public final class RemoteProtocol {
           return instruction_;
         }
       }
+      /**
+       * <code>optional .RemoteControlProtocol instruction = 2;</code>
+       */
       private com.google.protobuf.SingleFieldBuilder<
           akka.remote.RemoteProtocol.RemoteControlProtocol, akka.remote.RemoteProtocol.RemoteControlProtocol.Builder, akka.remote.RemoteProtocol.RemoteControlProtocolOrBuilder> 
           getInstructionFieldBuilder() {
@@ -800,135 +998,336 @@ public final class RemoteProtocol {
         }
         return instructionBuilder_;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:AkkaRemoteProtocol)
     }
-    
+
     static {
       defaultInstance = new AkkaRemoteProtocol(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:AkkaRemoteProtocol)
   }
-  
+
   public interface RemoteMessageProtocolOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // required .ActorRefProtocol recipient = 1;
+    /**
+     * <code>required .ActorRefProtocol recipient = 1;</code>
+     */
     boolean hasRecipient();
+    /**
+     * <code>required .ActorRefProtocol recipient = 1;</code>
+     */
     akka.remote.RemoteProtocol.ActorRefProtocol getRecipient();
+    /**
+     * <code>required .ActorRefProtocol recipient = 1;</code>
+     */
     akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder getRecipientOrBuilder();
-    
+
     // required .MessageProtocol message = 2;
+    /**
+     * <code>required .MessageProtocol message = 2;</code>
+     */
     boolean hasMessage();
+    /**
+     * <code>required .MessageProtocol message = 2;</code>
+     */
     akka.remote.RemoteProtocol.MessageProtocol getMessage();
+    /**
+     * <code>required .MessageProtocol message = 2;</code>
+     */
     akka.remote.RemoteProtocol.MessageProtocolOrBuilder getMessageOrBuilder();
-    
+
     // optional .ActorRefProtocol sender = 4;
+    /**
+     * <code>optional .ActorRefProtocol sender = 4;</code>
+     */
     boolean hasSender();
+    /**
+     * <code>optional .ActorRefProtocol sender = 4;</code>
+     */
     akka.remote.RemoteProtocol.ActorRefProtocol getSender();
+    /**
+     * <code>optional .ActorRefProtocol sender = 4;</code>
+     */
     akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder getSenderOrBuilder();
-    
+
     // repeated .MetadataEntryProtocol metadata = 5;
+    /**
+     * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+     */
     java.util.List<akka.remote.RemoteProtocol.MetadataEntryProtocol> 
         getMetadataList();
+    /**
+     * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+     */
     akka.remote.RemoteProtocol.MetadataEntryProtocol getMetadata(int index);
+    /**
+     * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+     */
     int getMetadataCount();
+    /**
+     * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+     */
     java.util.List<? extends akka.remote.RemoteProtocol.MetadataEntryProtocolOrBuilder> 
         getMetadataOrBuilderList();
+    /**
+     * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+     */
     akka.remote.RemoteProtocol.MetadataEntryProtocolOrBuilder getMetadataOrBuilder(
         int index);
   }
+  /**
+   * Protobuf type {@code RemoteMessageProtocol}
+   *
+   * <pre>
+   **
+   * Defines a remote message.
+   * </pre>
+   */
   public static final class RemoteMessageProtocol extends
       com.google.protobuf.GeneratedMessage
       implements RemoteMessageProtocolOrBuilder {
     // Use RemoteMessageProtocol.newBuilder() to construct.
-    private RemoteMessageProtocol(Builder builder) {
+    private RemoteMessageProtocol(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private RemoteMessageProtocol(boolean noInit) {}
-    
+    private RemoteMessageProtocol(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final RemoteMessageProtocol defaultInstance;
     public static RemoteMessageProtocol getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public RemoteMessageProtocol getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RemoteMessageProtocol(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              akka.remote.RemoteProtocol.ActorRefProtocol.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = recipient_.toBuilder();
+              }
+              recipient_ = input.readMessage(akka.remote.RemoteProtocol.ActorRefProtocol.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(recipient_);
+                recipient_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 18: {
+              akka.remote.RemoteProtocol.MessageProtocol.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = message_.toBuilder();
+              }
+              message_ = input.readMessage(akka.remote.RemoteProtocol.MessageProtocol.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(message_);
+                message_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 34: {
+              akka.remote.RemoteProtocol.ActorRefProtocol.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                subBuilder = sender_.toBuilder();
+              }
+              sender_ = input.readMessage(akka.remote.RemoteProtocol.ActorRefProtocol.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sender_);
+                sender_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                metadata_ = new java.util.ArrayList<akka.remote.RemoteProtocol.MetadataEntryProtocol>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              metadata_.add(input.readMessage(akka.remote.RemoteProtocol.MetadataEntryProtocol.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          metadata_ = java.util.Collections.unmodifiableList(metadata_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return akka.remote.RemoteProtocol.internal_static_RemoteMessageProtocol_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return akka.remote.RemoteProtocol.internal_static_RemoteMessageProtocol_fieldAccessorTable;
+      return akka.remote.RemoteProtocol.internal_static_RemoteMessageProtocol_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              akka.remote.RemoteProtocol.RemoteMessageProtocol.class, akka.remote.RemoteProtocol.RemoteMessageProtocol.Builder.class);
     }
-    
+
+    public static com.google.protobuf.Parser<RemoteMessageProtocol> PARSER =
+        new com.google.protobuf.AbstractParser<RemoteMessageProtocol>() {
+      public RemoteMessageProtocol parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RemoteMessageProtocol(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RemoteMessageProtocol> getParserForType() {
+      return PARSER;
+    }
+
     private int bitField0_;
     // required .ActorRefProtocol recipient = 1;
     public static final int RECIPIENT_FIELD_NUMBER = 1;
     private akka.remote.RemoteProtocol.ActorRefProtocol recipient_;
+    /**
+     * <code>required .ActorRefProtocol recipient = 1;</code>
+     */
     public boolean hasRecipient() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
+    /**
+     * <code>required .ActorRefProtocol recipient = 1;</code>
+     */
     public akka.remote.RemoteProtocol.ActorRefProtocol getRecipient() {
       return recipient_;
     }
+    /**
+     * <code>required .ActorRefProtocol recipient = 1;</code>
+     */
     public akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder getRecipientOrBuilder() {
       return recipient_;
     }
-    
+
     // required .MessageProtocol message = 2;
     public static final int MESSAGE_FIELD_NUMBER = 2;
     private akka.remote.RemoteProtocol.MessageProtocol message_;
+    /**
+     * <code>required .MessageProtocol message = 2;</code>
+     */
     public boolean hasMessage() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
+    /**
+     * <code>required .MessageProtocol message = 2;</code>
+     */
     public akka.remote.RemoteProtocol.MessageProtocol getMessage() {
       return message_;
     }
+    /**
+     * <code>required .MessageProtocol message = 2;</code>
+     */
     public akka.remote.RemoteProtocol.MessageProtocolOrBuilder getMessageOrBuilder() {
       return message_;
     }
-    
+
     // optional .ActorRefProtocol sender = 4;
     public static final int SENDER_FIELD_NUMBER = 4;
     private akka.remote.RemoteProtocol.ActorRefProtocol sender_;
+    /**
+     * <code>optional .ActorRefProtocol sender = 4;</code>
+     */
     public boolean hasSender() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
+    /**
+     * <code>optional .ActorRefProtocol sender = 4;</code>
+     */
     public akka.remote.RemoteProtocol.ActorRefProtocol getSender() {
       return sender_;
     }
+    /**
+     * <code>optional .ActorRefProtocol sender = 4;</code>
+     */
     public akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder getSenderOrBuilder() {
       return sender_;
     }
-    
+
     // repeated .MetadataEntryProtocol metadata = 5;
     public static final int METADATA_FIELD_NUMBER = 5;
     private java.util.List<akka.remote.RemoteProtocol.MetadataEntryProtocol> metadata_;
+    /**
+     * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+     */
     public java.util.List<akka.remote.RemoteProtocol.MetadataEntryProtocol> getMetadataList() {
       return metadata_;
     }
+    /**
+     * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+     */
     public java.util.List<? extends akka.remote.RemoteProtocol.MetadataEntryProtocolOrBuilder> 
         getMetadataOrBuilderList() {
       return metadata_;
     }
+    /**
+     * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+     */
     public int getMetadataCount() {
       return metadata_.size();
     }
+    /**
+     * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+     */
     public akka.remote.RemoteProtocol.MetadataEntryProtocol getMetadata(int index) {
       return metadata_.get(index);
     }
+    /**
+     * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+     */
     public akka.remote.RemoteProtocol.MetadataEntryProtocolOrBuilder getMetadataOrBuilder(
         int index) {
       return metadata_.get(index);
     }
-    
+
     private void initFields() {
       recipient_ = akka.remote.RemoteProtocol.ActorRefProtocol.getDefaultInstance();
       message_ = akka.remote.RemoteProtocol.MessageProtocol.getDefaultInstance();
@@ -939,7 +1338,7 @@ public final class RemoteProtocol {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-      
+
       if (!hasRecipient()) {
         memoizedIsInitialized = 0;
         return false;
@@ -971,7 +1370,7 @@ public final class RemoteProtocol {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -989,12 +1388,12 @@ public final class RemoteProtocol {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -1016,94 +1415,88 @@ public final class RemoteProtocol {
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static akka.remote.RemoteProtocol.RemoteMessageProtocol parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static akka.remote.RemoteProtocol.RemoteMessageProtocol parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.RemoteMessageProtocol parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static akka.remote.RemoteProtocol.RemoteMessageProtocol parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.RemoteMessageProtocol parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static akka.remote.RemoteProtocol.RemoteMessageProtocol parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.RemoteMessageProtocol parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static akka.remote.RemoteProtocol.RemoteMessageProtocol parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.RemoteMessageProtocol parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static akka.remote.RemoteProtocol.RemoteMessageProtocol parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(akka.remote.RemoteProtocol.RemoteMessageProtocol prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code RemoteMessageProtocol}
+     *
+     * <pre>
+     **
+     * Defines a remote message.
+     * </pre>
+     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements akka.remote.RemoteProtocol.RemoteMessageProtocolOrBuilder {
@@ -1111,18 +1504,21 @@ public final class RemoteProtocol {
           getDescriptor() {
         return akka.remote.RemoteProtocol.internal_static_RemoteMessageProtocol_descriptor;
       }
-      
+
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return akka.remote.RemoteProtocol.internal_static_RemoteMessageProtocol_fieldAccessorTable;
+        return akka.remote.RemoteProtocol.internal_static_RemoteMessageProtocol_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                akka.remote.RemoteProtocol.RemoteMessageProtocol.class, akka.remote.RemoteProtocol.RemoteMessageProtocol.Builder.class);
       }
-      
+
       // Construct using akka.remote.RemoteProtocol.RemoteMessageProtocol.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1137,7 +1533,7 @@ public final class RemoteProtocol {
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         if (recipientBuilder_ == null) {
@@ -1166,20 +1562,20 @@ public final class RemoteProtocol {
         }
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return akka.remote.RemoteProtocol.RemoteMessageProtocol.getDescriptor();
+        return akka.remote.RemoteProtocol.internal_static_RemoteMessageProtocol_descriptor;
       }
-      
+
       public akka.remote.RemoteProtocol.RemoteMessageProtocol getDefaultInstanceForType() {
         return akka.remote.RemoteProtocol.RemoteMessageProtocol.getDefaultInstance();
       }
-      
+
       public akka.remote.RemoteProtocol.RemoteMessageProtocol build() {
         akka.remote.RemoteProtocol.RemoteMessageProtocol result = buildPartial();
         if (!result.isInitialized()) {
@@ -1187,17 +1583,7 @@ public final class RemoteProtocol {
         }
         return result;
       }
-      
-      private akka.remote.RemoteProtocol.RemoteMessageProtocol buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        akka.remote.RemoteProtocol.RemoteMessageProtocol result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
       public akka.remote.RemoteProtocol.RemoteMessageProtocol buildPartial() {
         akka.remote.RemoteProtocol.RemoteMessageProtocol result = new akka.remote.RemoteProtocol.RemoteMessageProtocol(this);
         int from_bitField0_ = bitField0_;
@@ -1239,7 +1625,7 @@ public final class RemoteProtocol {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof akka.remote.RemoteProtocol.RemoteMessageProtocol) {
           return mergeFrom((akka.remote.RemoteProtocol.RemoteMessageProtocol)other);
@@ -1248,7 +1634,7 @@ public final class RemoteProtocol {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(akka.remote.RemoteProtocol.RemoteMessageProtocol other) {
         if (other == akka.remote.RemoteProtocol.RemoteMessageProtocol.getDefaultInstance()) return this;
         if (other.hasRecipient()) {
@@ -1289,7 +1675,7 @@ public final class RemoteProtocol {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         if (!hasRecipient()) {
           
@@ -1321,76 +1707,39 @@ public final class RemoteProtocol {
         }
         return true;
       }
-      
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              akka.remote.RemoteProtocol.ActorRefProtocol.Builder subBuilder = akka.remote.RemoteProtocol.ActorRefProtocol.newBuilder();
-              if (hasRecipient()) {
-                subBuilder.mergeFrom(getRecipient());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setRecipient(subBuilder.buildPartial());
-              break;
-            }
-            case 18: {
-              akka.remote.RemoteProtocol.MessageProtocol.Builder subBuilder = akka.remote.RemoteProtocol.MessageProtocol.newBuilder();
-              if (hasMessage()) {
-                subBuilder.mergeFrom(getMessage());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setMessage(subBuilder.buildPartial());
-              break;
-            }
-            case 34: {
-              akka.remote.RemoteProtocol.ActorRefProtocol.Builder subBuilder = akka.remote.RemoteProtocol.ActorRefProtocol.newBuilder();
-              if (hasSender()) {
-                subBuilder.mergeFrom(getSender());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setSender(subBuilder.buildPartial());
-              break;
-            }
-            case 42: {
-              akka.remote.RemoteProtocol.MetadataEntryProtocol.Builder subBuilder = akka.remote.RemoteProtocol.MetadataEntryProtocol.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addMetadata(subBuilder.buildPartial());
-              break;
-            }
+        akka.remote.RemoteProtocol.RemoteMessageProtocol parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (akka.remote.RemoteProtocol.RemoteMessageProtocol) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
+
       // required .ActorRefProtocol recipient = 1;
       private akka.remote.RemoteProtocol.ActorRefProtocol recipient_ = akka.remote.RemoteProtocol.ActorRefProtocol.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           akka.remote.RemoteProtocol.ActorRefProtocol, akka.remote.RemoteProtocol.ActorRefProtocol.Builder, akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder> recipientBuilder_;
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       public boolean hasRecipient() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       public akka.remote.RemoteProtocol.ActorRefProtocol getRecipient() {
         if (recipientBuilder_ == null) {
           return recipient_;
@@ -1398,6 +1747,9 @@ public final class RemoteProtocol {
           return recipientBuilder_.getMessage();
         }
       }
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       public Builder setRecipient(akka.remote.RemoteProtocol.ActorRefProtocol value) {
         if (recipientBuilder_ == null) {
           if (value == null) {
@@ -1411,6 +1763,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000001;
         return this;
       }
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       public Builder setRecipient(
           akka.remote.RemoteProtocol.ActorRefProtocol.Builder builderForValue) {
         if (recipientBuilder_ == null) {
@@ -1422,6 +1777,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000001;
         return this;
       }
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       public Builder mergeRecipient(akka.remote.RemoteProtocol.ActorRefProtocol value) {
         if (recipientBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001) &&
@@ -1438,6 +1796,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000001;
         return this;
       }
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       public Builder clearRecipient() {
         if (recipientBuilder_ == null) {
           recipient_ = akka.remote.RemoteProtocol.ActorRefProtocol.getDefaultInstance();
@@ -1448,11 +1809,17 @@ public final class RemoteProtocol {
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       public akka.remote.RemoteProtocol.ActorRefProtocol.Builder getRecipientBuilder() {
         bitField0_ |= 0x00000001;
         onChanged();
         return getRecipientFieldBuilder().getBuilder();
       }
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       public akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder getRecipientOrBuilder() {
         if (recipientBuilder_ != null) {
           return recipientBuilder_.getMessageOrBuilder();
@@ -1460,6 +1827,9 @@ public final class RemoteProtocol {
           return recipient_;
         }
       }
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       private com.google.protobuf.SingleFieldBuilder<
           akka.remote.RemoteProtocol.ActorRefProtocol, akka.remote.RemoteProtocol.ActorRefProtocol.Builder, akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder> 
           getRecipientFieldBuilder() {
@@ -1473,14 +1843,20 @@ public final class RemoteProtocol {
         }
         return recipientBuilder_;
       }
-      
+
       // required .MessageProtocol message = 2;
       private akka.remote.RemoteProtocol.MessageProtocol message_ = akka.remote.RemoteProtocol.MessageProtocol.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           akka.remote.RemoteProtocol.MessageProtocol, akka.remote.RemoteProtocol.MessageProtocol.Builder, akka.remote.RemoteProtocol.MessageProtocolOrBuilder> messageBuilder_;
+      /**
+       * <code>required .MessageProtocol message = 2;</code>
+       */
       public boolean hasMessage() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+      /**
+       * <code>required .MessageProtocol message = 2;</code>
+       */
       public akka.remote.RemoteProtocol.MessageProtocol getMessage() {
         if (messageBuilder_ == null) {
           return message_;
@@ -1488,6 +1864,9 @@ public final class RemoteProtocol {
           return messageBuilder_.getMessage();
         }
       }
+      /**
+       * <code>required .MessageProtocol message = 2;</code>
+       */
       public Builder setMessage(akka.remote.RemoteProtocol.MessageProtocol value) {
         if (messageBuilder_ == null) {
           if (value == null) {
@@ -1501,6 +1880,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000002;
         return this;
       }
+      /**
+       * <code>required .MessageProtocol message = 2;</code>
+       */
       public Builder setMessage(
           akka.remote.RemoteProtocol.MessageProtocol.Builder builderForValue) {
         if (messageBuilder_ == null) {
@@ -1512,6 +1894,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000002;
         return this;
       }
+      /**
+       * <code>required .MessageProtocol message = 2;</code>
+       */
       public Builder mergeMessage(akka.remote.RemoteProtocol.MessageProtocol value) {
         if (messageBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
@@ -1528,6 +1913,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000002;
         return this;
       }
+      /**
+       * <code>required .MessageProtocol message = 2;</code>
+       */
       public Builder clearMessage() {
         if (messageBuilder_ == null) {
           message_ = akka.remote.RemoteProtocol.MessageProtocol.getDefaultInstance();
@@ -1538,11 +1926,17 @@ public final class RemoteProtocol {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
+      /**
+       * <code>required .MessageProtocol message = 2;</code>
+       */
       public akka.remote.RemoteProtocol.MessageProtocol.Builder getMessageBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
         return getMessageFieldBuilder().getBuilder();
       }
+      /**
+       * <code>required .MessageProtocol message = 2;</code>
+       */
       public akka.remote.RemoteProtocol.MessageProtocolOrBuilder getMessageOrBuilder() {
         if (messageBuilder_ != null) {
           return messageBuilder_.getMessageOrBuilder();
@@ -1550,6 +1944,9 @@ public final class RemoteProtocol {
           return message_;
         }
       }
+      /**
+       * <code>required .MessageProtocol message = 2;</code>
+       */
       private com.google.protobuf.SingleFieldBuilder<
           akka.remote.RemoteProtocol.MessageProtocol, akka.remote.RemoteProtocol.MessageProtocol.Builder, akka.remote.RemoteProtocol.MessageProtocolOrBuilder> 
           getMessageFieldBuilder() {
@@ -1563,14 +1960,20 @@ public final class RemoteProtocol {
         }
         return messageBuilder_;
       }
-      
+
       // optional .ActorRefProtocol sender = 4;
       private akka.remote.RemoteProtocol.ActorRefProtocol sender_ = akka.remote.RemoteProtocol.ActorRefProtocol.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           akka.remote.RemoteProtocol.ActorRefProtocol, akka.remote.RemoteProtocol.ActorRefProtocol.Builder, akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder> senderBuilder_;
+      /**
+       * <code>optional .ActorRefProtocol sender = 4;</code>
+       */
       public boolean hasSender() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+      /**
+       * <code>optional .ActorRefProtocol sender = 4;</code>
+       */
       public akka.remote.RemoteProtocol.ActorRefProtocol getSender() {
         if (senderBuilder_ == null) {
           return sender_;
@@ -1578,6 +1981,9 @@ public final class RemoteProtocol {
           return senderBuilder_.getMessage();
         }
       }
+      /**
+       * <code>optional .ActorRefProtocol sender = 4;</code>
+       */
       public Builder setSender(akka.remote.RemoteProtocol.ActorRefProtocol value) {
         if (senderBuilder_ == null) {
           if (value == null) {
@@ -1591,6 +1997,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000004;
         return this;
       }
+      /**
+       * <code>optional .ActorRefProtocol sender = 4;</code>
+       */
       public Builder setSender(
           akka.remote.RemoteProtocol.ActorRefProtocol.Builder builderForValue) {
         if (senderBuilder_ == null) {
@@ -1602,6 +2011,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000004;
         return this;
       }
+      /**
+       * <code>optional .ActorRefProtocol sender = 4;</code>
+       */
       public Builder mergeSender(akka.remote.RemoteProtocol.ActorRefProtocol value) {
         if (senderBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004) &&
@@ -1618,6 +2030,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000004;
         return this;
       }
+      /**
+       * <code>optional .ActorRefProtocol sender = 4;</code>
+       */
       public Builder clearSender() {
         if (senderBuilder_ == null) {
           sender_ = akka.remote.RemoteProtocol.ActorRefProtocol.getDefaultInstance();
@@ -1628,11 +2043,17 @@ public final class RemoteProtocol {
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
+      /**
+       * <code>optional .ActorRefProtocol sender = 4;</code>
+       */
       public akka.remote.RemoteProtocol.ActorRefProtocol.Builder getSenderBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
         return getSenderFieldBuilder().getBuilder();
       }
+      /**
+       * <code>optional .ActorRefProtocol sender = 4;</code>
+       */
       public akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder getSenderOrBuilder() {
         if (senderBuilder_ != null) {
           return senderBuilder_.getMessageOrBuilder();
@@ -1640,6 +2061,9 @@ public final class RemoteProtocol {
           return sender_;
         }
       }
+      /**
+       * <code>optional .ActorRefProtocol sender = 4;</code>
+       */
       private com.google.protobuf.SingleFieldBuilder<
           akka.remote.RemoteProtocol.ActorRefProtocol, akka.remote.RemoteProtocol.ActorRefProtocol.Builder, akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder> 
           getSenderFieldBuilder() {
@@ -1653,7 +2077,7 @@ public final class RemoteProtocol {
         }
         return senderBuilder_;
       }
-      
+
       // repeated .MetadataEntryProtocol metadata = 5;
       private java.util.List<akka.remote.RemoteProtocol.MetadataEntryProtocol> metadata_ =
         java.util.Collections.emptyList();
@@ -1663,10 +2087,13 @@ public final class RemoteProtocol {
           bitField0_ |= 0x00000008;
          }
       }
-      
+
       private com.google.protobuf.RepeatedFieldBuilder<
           akka.remote.RemoteProtocol.MetadataEntryProtocol, akka.remote.RemoteProtocol.MetadataEntryProtocol.Builder, akka.remote.RemoteProtocol.MetadataEntryProtocolOrBuilder> metadataBuilder_;
-      
+
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public java.util.List<akka.remote.RemoteProtocol.MetadataEntryProtocol> getMetadataList() {
         if (metadataBuilder_ == null) {
           return java.util.Collections.unmodifiableList(metadata_);
@@ -1674,6 +2101,9 @@ public final class RemoteProtocol {
           return metadataBuilder_.getMessageList();
         }
       }
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public int getMetadataCount() {
         if (metadataBuilder_ == null) {
           return metadata_.size();
@@ -1681,6 +2111,9 @@ public final class RemoteProtocol {
           return metadataBuilder_.getCount();
         }
       }
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public akka.remote.RemoteProtocol.MetadataEntryProtocol getMetadata(int index) {
         if (metadataBuilder_ == null) {
           return metadata_.get(index);
@@ -1688,6 +2121,9 @@ public final class RemoteProtocol {
           return metadataBuilder_.getMessage(index);
         }
       }
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public Builder setMetadata(
           int index, akka.remote.RemoteProtocol.MetadataEntryProtocol value) {
         if (metadataBuilder_ == null) {
@@ -1702,6 +2138,9 @@ public final class RemoteProtocol {
         }
         return this;
       }
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public Builder setMetadata(
           int index, akka.remote.RemoteProtocol.MetadataEntryProtocol.Builder builderForValue) {
         if (metadataBuilder_ == null) {
@@ -1713,6 +2152,9 @@ public final class RemoteProtocol {
         }
         return this;
       }
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public Builder addMetadata(akka.remote.RemoteProtocol.MetadataEntryProtocol value) {
         if (metadataBuilder_ == null) {
           if (value == null) {
@@ -1726,6 +2168,9 @@ public final class RemoteProtocol {
         }
         return this;
       }
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public Builder addMetadata(
           int index, akka.remote.RemoteProtocol.MetadataEntryProtocol value) {
         if (metadataBuilder_ == null) {
@@ -1740,6 +2185,9 @@ public final class RemoteProtocol {
         }
         return this;
       }
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public Builder addMetadata(
           akka.remote.RemoteProtocol.MetadataEntryProtocol.Builder builderForValue) {
         if (metadataBuilder_ == null) {
@@ -1751,6 +2199,9 @@ public final class RemoteProtocol {
         }
         return this;
       }
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public Builder addMetadata(
           int index, akka.remote.RemoteProtocol.MetadataEntryProtocol.Builder builderForValue) {
         if (metadataBuilder_ == null) {
@@ -1762,6 +2213,9 @@ public final class RemoteProtocol {
         }
         return this;
       }
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public Builder addAllMetadata(
           java.lang.Iterable<? extends akka.remote.RemoteProtocol.MetadataEntryProtocol> values) {
         if (metadataBuilder_ == null) {
@@ -1773,6 +2227,9 @@ public final class RemoteProtocol {
         }
         return this;
       }
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public Builder clearMetadata() {
         if (metadataBuilder_ == null) {
           metadata_ = java.util.Collections.emptyList();
@@ -1783,6 +2240,9 @@ public final class RemoteProtocol {
         }
         return this;
       }
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public Builder removeMetadata(int index) {
         if (metadataBuilder_ == null) {
           ensureMetadataIsMutable();
@@ -1793,10 +2253,16 @@ public final class RemoteProtocol {
         }
         return this;
       }
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public akka.remote.RemoteProtocol.MetadataEntryProtocol.Builder getMetadataBuilder(
           int index) {
         return getMetadataFieldBuilder().getBuilder(index);
       }
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public akka.remote.RemoteProtocol.MetadataEntryProtocolOrBuilder getMetadataOrBuilder(
           int index) {
         if (metadataBuilder_ == null) {
@@ -1804,6 +2270,9 @@ public final class RemoteProtocol {
           return metadataBuilder_.getMessageOrBuilder(index);
         }
       }
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public java.util.List<? extends akka.remote.RemoteProtocol.MetadataEntryProtocolOrBuilder> 
            getMetadataOrBuilderList() {
         if (metadataBuilder_ != null) {
@@ -1812,15 +2281,24 @@ public final class RemoteProtocol {
           return java.util.Collections.unmodifiableList(metadata_);
         }
       }
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public akka.remote.RemoteProtocol.MetadataEntryProtocol.Builder addMetadataBuilder() {
         return getMetadataFieldBuilder().addBuilder(
             akka.remote.RemoteProtocol.MetadataEntryProtocol.getDefaultInstance());
       }
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public akka.remote.RemoteProtocol.MetadataEntryProtocol.Builder addMetadataBuilder(
           int index) {
         return getMetadataFieldBuilder().addBuilder(
             index, akka.remote.RemoteProtocol.MetadataEntryProtocol.getDefaultInstance());
       }
+      /**
+       * <code>repeated .MetadataEntryProtocol metadata = 5;</code>
+       */
       public java.util.List<akka.remote.RemoteProtocol.MetadataEntryProtocol.Builder> 
            getMetadataBuilderList() {
         return getMetadataFieldBuilder().getBuilderList();
@@ -1839,118 +2317,266 @@ public final class RemoteProtocol {
         }
         return metadataBuilder_;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:RemoteMessageProtocol)
     }
-    
+
     static {
       defaultInstance = new RemoteMessageProtocol(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:RemoteMessageProtocol)
   }
-  
+
   public interface RemoteControlProtocolOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // required .CommandType commandType = 1;
+    /**
+     * <code>required .CommandType commandType = 1;</code>
+     */
     boolean hasCommandType();
+    /**
+     * <code>required .CommandType commandType = 1;</code>
+     */
     akka.remote.RemoteProtocol.CommandType getCommandType();
-    
+
     // optional string cookie = 2;
+    /**
+     * <code>optional string cookie = 2;</code>
+     */
     boolean hasCookie();
-    String getCookie();
-    
+    /**
+     * <code>optional string cookie = 2;</code>
+     */
+    java.lang.String getCookie();
+    /**
+     * <code>optional string cookie = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getCookieBytes();
+
     // optional .AddressProtocol origin = 3;
+    /**
+     * <code>optional .AddressProtocol origin = 3;</code>
+     */
     boolean hasOrigin();
+    /**
+     * <code>optional .AddressProtocol origin = 3;</code>
+     */
     akka.remote.RemoteProtocol.AddressProtocol getOrigin();
+    /**
+     * <code>optional .AddressProtocol origin = 3;</code>
+     */
     akka.remote.RemoteProtocol.AddressProtocolOrBuilder getOriginOrBuilder();
   }
+  /**
+   * Protobuf type {@code RemoteControlProtocol}
+   *
+   * <pre>
+   **
+   * Defines some control messages for the remoting
+   * </pre>
+   */
   public static final class RemoteControlProtocol extends
       com.google.protobuf.GeneratedMessage
       implements RemoteControlProtocolOrBuilder {
     // Use RemoteControlProtocol.newBuilder() to construct.
-    private RemoteControlProtocol(Builder builder) {
+    private RemoteControlProtocol(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private RemoteControlProtocol(boolean noInit) {}
-    
+    private RemoteControlProtocol(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final RemoteControlProtocol defaultInstance;
     public static RemoteControlProtocol getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public RemoteControlProtocol getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RemoteControlProtocol(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              akka.remote.RemoteProtocol.CommandType value = akka.remote.RemoteProtocol.CommandType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                commandType_ = value;
+              }
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              cookie_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              akka.remote.RemoteProtocol.AddressProtocol.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                subBuilder = origin_.toBuilder();
+              }
+              origin_ = input.readMessage(akka.remote.RemoteProtocol.AddressProtocol.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(origin_);
+                origin_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return akka.remote.RemoteProtocol.internal_static_RemoteControlProtocol_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return akka.remote.RemoteProtocol.internal_static_RemoteControlProtocol_fieldAccessorTable;
+      return akka.remote.RemoteProtocol.internal_static_RemoteControlProtocol_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              akka.remote.RemoteProtocol.RemoteControlProtocol.class, akka.remote.RemoteProtocol.RemoteControlProtocol.Builder.class);
     }
-    
+
+    public static com.google.protobuf.Parser<RemoteControlProtocol> PARSER =
+        new com.google.protobuf.AbstractParser<RemoteControlProtocol>() {
+      public RemoteControlProtocol parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RemoteControlProtocol(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RemoteControlProtocol> getParserForType() {
+      return PARSER;
+    }
+
     private int bitField0_;
     // required .CommandType commandType = 1;
     public static final int COMMANDTYPE_FIELD_NUMBER = 1;
     private akka.remote.RemoteProtocol.CommandType commandType_;
+    /**
+     * <code>required .CommandType commandType = 1;</code>
+     */
     public boolean hasCommandType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
+    /**
+     * <code>required .CommandType commandType = 1;</code>
+     */
     public akka.remote.RemoteProtocol.CommandType getCommandType() {
       return commandType_;
     }
-    
+
     // optional string cookie = 2;
     public static final int COOKIE_FIELD_NUMBER = 2;
     private java.lang.Object cookie_;
+    /**
+     * <code>optional string cookie = 2;</code>
+     */
     public boolean hasCookie() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    public String getCookie() {
+    /**
+     * <code>optional string cookie = 2;</code>
+     */
+    public java.lang.String getCookie() {
       java.lang.Object ref = cookie_;
-      if (ref instanceof String) {
-        return (String) ref;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           cookie_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getCookieBytes() {
+    /**
+     * <code>optional string cookie = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCookieBytes() {
       java.lang.Object ref = cookie_;
-      if (ref instanceof String) {
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         cookie_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // optional .AddressProtocol origin = 3;
     public static final int ORIGIN_FIELD_NUMBER = 3;
     private akka.remote.RemoteProtocol.AddressProtocol origin_;
+    /**
+     * <code>optional .AddressProtocol origin = 3;</code>
+     */
     public boolean hasOrigin() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
+    /**
+     * <code>optional .AddressProtocol origin = 3;</code>
+     */
     public akka.remote.RemoteProtocol.AddressProtocol getOrigin() {
       return origin_;
     }
+    /**
+     * <code>optional .AddressProtocol origin = 3;</code>
+     */
     public akka.remote.RemoteProtocol.AddressProtocolOrBuilder getOriginOrBuilder() {
       return origin_;
     }
-    
+
     private void initFields() {
       commandType_ = akka.remote.RemoteProtocol.CommandType.CONNECT;
       cookie_ = "";
@@ -1960,7 +2586,7 @@ public final class RemoteProtocol {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-      
+
       if (!hasCommandType()) {
         memoizedIsInitialized = 0;
         return false;
@@ -1974,7 +2600,7 @@ public final class RemoteProtocol {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -1989,12 +2615,12 @@ public final class RemoteProtocol {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -2012,94 +2638,88 @@ public final class RemoteProtocol {
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static akka.remote.RemoteProtocol.RemoteControlProtocol parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static akka.remote.RemoteProtocol.RemoteControlProtocol parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.RemoteControlProtocol parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static akka.remote.RemoteProtocol.RemoteControlProtocol parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.RemoteControlProtocol parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static akka.remote.RemoteProtocol.RemoteControlProtocol parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.RemoteControlProtocol parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static akka.remote.RemoteProtocol.RemoteControlProtocol parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.RemoteControlProtocol parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static akka.remote.RemoteProtocol.RemoteControlProtocol parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(akka.remote.RemoteProtocol.RemoteControlProtocol prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code RemoteControlProtocol}
+     *
+     * <pre>
+     **
+     * Defines some control messages for the remoting
+     * </pre>
+     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements akka.remote.RemoteProtocol.RemoteControlProtocolOrBuilder {
@@ -2107,18 +2727,21 @@ public final class RemoteProtocol {
           getDescriptor() {
         return akka.remote.RemoteProtocol.internal_static_RemoteControlProtocol_descriptor;
       }
-      
+
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return akka.remote.RemoteProtocol.internal_static_RemoteControlProtocol_fieldAccessorTable;
+        return akka.remote.RemoteProtocol.internal_static_RemoteControlProtocol_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                akka.remote.RemoteProtocol.RemoteControlProtocol.class, akka.remote.RemoteProtocol.RemoteControlProtocol.Builder.class);
       }
-      
+
       // Construct using akka.remote.RemoteProtocol.RemoteControlProtocol.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -2130,7 +2753,7 @@ public final class RemoteProtocol {
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         commandType_ = akka.remote.RemoteProtocol.CommandType.CONNECT;
@@ -2145,20 +2768,20 @@ public final class RemoteProtocol {
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return akka.remote.RemoteProtocol.RemoteControlProtocol.getDescriptor();
+        return akka.remote.RemoteProtocol.internal_static_RemoteControlProtocol_descriptor;
       }
-      
+
       public akka.remote.RemoteProtocol.RemoteControlProtocol getDefaultInstanceForType() {
         return akka.remote.RemoteProtocol.RemoteControlProtocol.getDefaultInstance();
       }
-      
+
       public akka.remote.RemoteProtocol.RemoteControlProtocol build() {
         akka.remote.RemoteProtocol.RemoteControlProtocol result = buildPartial();
         if (!result.isInitialized()) {
@@ -2166,17 +2789,7 @@ public final class RemoteProtocol {
         }
         return result;
       }
-      
-      private akka.remote.RemoteProtocol.RemoteControlProtocol buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        akka.remote.RemoteProtocol.RemoteControlProtocol result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
       public akka.remote.RemoteProtocol.RemoteControlProtocol buildPartial() {
         akka.remote.RemoteProtocol.RemoteControlProtocol result = new akka.remote.RemoteProtocol.RemoteControlProtocol(this);
         int from_bitField0_ = bitField0_;
@@ -2201,7 +2814,7 @@ public final class RemoteProtocol {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof akka.remote.RemoteProtocol.RemoteControlProtocol) {
           return mergeFrom((akka.remote.RemoteProtocol.RemoteControlProtocol)other);
@@ -2210,14 +2823,16 @@ public final class RemoteProtocol {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(akka.remote.RemoteProtocol.RemoteControlProtocol other) {
         if (other == akka.remote.RemoteProtocol.RemoteControlProtocol.getDefaultInstance()) return this;
         if (other.hasCommandType()) {
           setCommandType(other.getCommandType());
         }
         if (other.hasCookie()) {
-          setCookie(other.getCookie());
+          bitField0_ |= 0x00000002;
+          cookie_ = other.cookie_;
+          onChanged();
         }
         if (other.hasOrigin()) {
           mergeOrigin(other.getOrigin());
@@ -2225,7 +2840,7 @@ public final class RemoteProtocol {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         if (!hasCommandType()) {
           
@@ -2239,69 +2854,43 @@ public final class RemoteProtocol {
         }
         return true;
       }
-      
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-              akka.remote.RemoteProtocol.CommandType value = akka.remote.RemoteProtocol.CommandType.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(1, rawValue);
-              } else {
-                bitField0_ |= 0x00000001;
-                commandType_ = value;
-              }
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              cookie_ = input.readBytes();
-              break;
-            }
-            case 26: {
-              akka.remote.RemoteProtocol.AddressProtocol.Builder subBuilder = akka.remote.RemoteProtocol.AddressProtocol.newBuilder();
-              if (hasOrigin()) {
-                subBuilder.mergeFrom(getOrigin());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setOrigin(subBuilder.buildPartial());
-              break;
-            }
+        akka.remote.RemoteProtocol.RemoteControlProtocol parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (akka.remote.RemoteProtocol.RemoteControlProtocol) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
+
       // required .CommandType commandType = 1;
       private akka.remote.RemoteProtocol.CommandType commandType_ = akka.remote.RemoteProtocol.CommandType.CONNECT;
+      /**
+       * <code>required .CommandType commandType = 1;</code>
+       */
       public boolean hasCommandType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+      /**
+       * <code>required .CommandType commandType = 1;</code>
+       */
       public akka.remote.RemoteProtocol.CommandType getCommandType() {
         return commandType_;
       }
+      /**
+       * <code>required .CommandType commandType = 1;</code>
+       */
       public Builder setCommandType(akka.remote.RemoteProtocol.CommandType value) {
         if (value == null) {
           throw new NullPointerException();
@@ -2311,29 +2900,59 @@ public final class RemoteProtocol {
         onChanged();
         return this;
       }
+      /**
+       * <code>required .CommandType commandType = 1;</code>
+       */
       public Builder clearCommandType() {
         bitField0_ = (bitField0_ & ~0x00000001);
         commandType_ = akka.remote.RemoteProtocol.CommandType.CONNECT;
         onChanged();
         return this;
       }
-      
+
       // optional string cookie = 2;
       private java.lang.Object cookie_ = "";
+      /**
+       * <code>optional string cookie = 2;</code>
+       */
       public boolean hasCookie() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      public String getCookie() {
+      /**
+       * <code>optional string cookie = 2;</code>
+       */
+      public java.lang.String getCookie() {
         java.lang.Object ref = cookie_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           cookie_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setCookie(String value) {
+      /**
+       * <code>optional string cookie = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCookieBytes() {
+        java.lang.Object ref = cookie_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cookie_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string cookie = 2;</code>
+       */
+      public Builder setCookie(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2342,25 +2961,42 @@ public final class RemoteProtocol {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional string cookie = 2;</code>
+       */
       public Builder clearCookie() {
         bitField0_ = (bitField0_ & ~0x00000002);
         cookie_ = getDefaultInstance().getCookie();
         onChanged();
         return this;
       }
-      void setCookie(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000002;
+      /**
+       * <code>optional string cookie = 2;</code>
+       */
+      public Builder setCookieBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         cookie_ = value;
         onChanged();
+        return this;
       }
-      
+
       // optional .AddressProtocol origin = 3;
       private akka.remote.RemoteProtocol.AddressProtocol origin_ = akka.remote.RemoteProtocol.AddressProtocol.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           akka.remote.RemoteProtocol.AddressProtocol, akka.remote.RemoteProtocol.AddressProtocol.Builder, akka.remote.RemoteProtocol.AddressProtocolOrBuilder> originBuilder_;
+      /**
+       * <code>optional .AddressProtocol origin = 3;</code>
+       */
       public boolean hasOrigin() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+      /**
+       * <code>optional .AddressProtocol origin = 3;</code>
+       */
       public akka.remote.RemoteProtocol.AddressProtocol getOrigin() {
         if (originBuilder_ == null) {
           return origin_;
@@ -2368,6 +3004,9 @@ public final class RemoteProtocol {
           return originBuilder_.getMessage();
         }
       }
+      /**
+       * <code>optional .AddressProtocol origin = 3;</code>
+       */
       public Builder setOrigin(akka.remote.RemoteProtocol.AddressProtocol value) {
         if (originBuilder_ == null) {
           if (value == null) {
@@ -2381,6 +3020,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000004;
         return this;
       }
+      /**
+       * <code>optional .AddressProtocol origin = 3;</code>
+       */
       public Builder setOrigin(
           akka.remote.RemoteProtocol.AddressProtocol.Builder builderForValue) {
         if (originBuilder_ == null) {
@@ -2392,6 +3034,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000004;
         return this;
       }
+      /**
+       * <code>optional .AddressProtocol origin = 3;</code>
+       */
       public Builder mergeOrigin(akka.remote.RemoteProtocol.AddressProtocol value) {
         if (originBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004) &&
@@ -2408,6 +3053,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000004;
         return this;
       }
+      /**
+       * <code>optional .AddressProtocol origin = 3;</code>
+       */
       public Builder clearOrigin() {
         if (originBuilder_ == null) {
           origin_ = akka.remote.RemoteProtocol.AddressProtocol.getDefaultInstance();
@@ -2418,11 +3066,17 @@ public final class RemoteProtocol {
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
+      /**
+       * <code>optional .AddressProtocol origin = 3;</code>
+       */
       public akka.remote.RemoteProtocol.AddressProtocol.Builder getOriginBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
         return getOriginFieldBuilder().getBuilder();
       }
+      /**
+       * <code>optional .AddressProtocol origin = 3;</code>
+       */
       public akka.remote.RemoteProtocol.AddressProtocolOrBuilder getOriginOrBuilder() {
         if (originBuilder_ != null) {
           return originBuilder_.getMessageOrBuilder();
@@ -2430,6 +3084,9 @@ public final class RemoteProtocol {
           return origin_;
         }
       }
+      /**
+       * <code>optional .AddressProtocol origin = 3;</code>
+       */
       private com.google.protobuf.SingleFieldBuilder<
           akka.remote.RemoteProtocol.AddressProtocol, akka.remote.RemoteProtocol.AddressProtocol.Builder, akka.remote.RemoteProtocol.AddressProtocolOrBuilder> 
           getOriginFieldBuilder() {
@@ -2443,86 +3100,181 @@ public final class RemoteProtocol {
         }
         return originBuilder_;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:RemoteControlProtocol)
     }
-    
+
     static {
       defaultInstance = new RemoteControlProtocol(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:RemoteControlProtocol)
   }
-  
+
   public interface ActorRefProtocolOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // required string path = 1;
+    /**
+     * <code>required string path = 1;</code>
+     */
     boolean hasPath();
-    String getPath();
+    /**
+     * <code>required string path = 1;</code>
+     */
+    java.lang.String getPath();
+    /**
+     * <code>required string path = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getPathBytes();
   }
+  /**
+   * Protobuf type {@code ActorRefProtocol}
+   *
+   * <pre>
+   **
+   * Defines a remote ActorRef that "remembers" and uses its original Actor instance
+   * on the original node.
+   * </pre>
+   */
   public static final class ActorRefProtocol extends
       com.google.protobuf.GeneratedMessage
       implements ActorRefProtocolOrBuilder {
     // Use ActorRefProtocol.newBuilder() to construct.
-    private ActorRefProtocol(Builder builder) {
+    private ActorRefProtocol(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private ActorRefProtocol(boolean noInit) {}
-    
+    private ActorRefProtocol(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final ActorRefProtocol defaultInstance;
     public static ActorRefProtocol getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public ActorRefProtocol getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ActorRefProtocol(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              path_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return akka.remote.RemoteProtocol.internal_static_ActorRefProtocol_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return akka.remote.RemoteProtocol.internal_static_ActorRefProtocol_fieldAccessorTable;
+      return akka.remote.RemoteProtocol.internal_static_ActorRefProtocol_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              akka.remote.RemoteProtocol.ActorRefProtocol.class, akka.remote.RemoteProtocol.ActorRefProtocol.Builder.class);
     }
-    
+
+    public static com.google.protobuf.Parser<ActorRefProtocol> PARSER =
+        new com.google.protobuf.AbstractParser<ActorRefProtocol>() {
+      public ActorRefProtocol parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ActorRefProtocol(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ActorRefProtocol> getParserForType() {
+      return PARSER;
+    }
+
     private int bitField0_;
     // required string path = 1;
     public static final int PATH_FIELD_NUMBER = 1;
     private java.lang.Object path_;
+    /**
+     * <code>required string path = 1;</code>
+     */
     public boolean hasPath() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    public String getPath() {
+    /**
+     * <code>required string path = 1;</code>
+     */
+    public java.lang.String getPath() {
       java.lang.Object ref = path_;
-      if (ref instanceof String) {
-        return (String) ref;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           path_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getPathBytes() {
+    /**
+     * <code>required string path = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPathBytes() {
       java.lang.Object ref = path_;
-      if (ref instanceof String) {
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         path_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     private void initFields() {
       path_ = "";
     }
@@ -2530,7 +3282,7 @@ public final class RemoteProtocol {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-      
+
       if (!hasPath()) {
         memoizedIsInitialized = 0;
         return false;
@@ -2538,7 +3290,7 @@ public final class RemoteProtocol {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -2547,12 +3299,12 @@ public final class RemoteProtocol {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -2562,94 +3314,89 @@ public final class RemoteProtocol {
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static akka.remote.RemoteProtocol.ActorRefProtocol parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static akka.remote.RemoteProtocol.ActorRefProtocol parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.ActorRefProtocol parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static akka.remote.RemoteProtocol.ActorRefProtocol parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.ActorRefProtocol parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static akka.remote.RemoteProtocol.ActorRefProtocol parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.ActorRefProtocol parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static akka.remote.RemoteProtocol.ActorRefProtocol parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.ActorRefProtocol parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static akka.remote.RemoteProtocol.ActorRefProtocol parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(akka.remote.RemoteProtocol.ActorRefProtocol prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code ActorRefProtocol}
+     *
+     * <pre>
+     **
+     * Defines a remote ActorRef that "remembers" and uses its original Actor instance
+     * on the original node.
+     * </pre>
+     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder {
@@ -2657,18 +3404,21 @@ public final class RemoteProtocol {
           getDescriptor() {
         return akka.remote.RemoteProtocol.internal_static_ActorRefProtocol_descriptor;
       }
-      
+
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return akka.remote.RemoteProtocol.internal_static_ActorRefProtocol_fieldAccessorTable;
+        return akka.remote.RemoteProtocol.internal_static_ActorRefProtocol_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                akka.remote.RemoteProtocol.ActorRefProtocol.class, akka.remote.RemoteProtocol.ActorRefProtocol.Builder.class);
       }
-      
+
       // Construct using akka.remote.RemoteProtocol.ActorRefProtocol.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -2679,27 +3429,27 @@ public final class RemoteProtocol {
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         path_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return akka.remote.RemoteProtocol.ActorRefProtocol.getDescriptor();
+        return akka.remote.RemoteProtocol.internal_static_ActorRefProtocol_descriptor;
       }
-      
+
       public akka.remote.RemoteProtocol.ActorRefProtocol getDefaultInstanceForType() {
         return akka.remote.RemoteProtocol.ActorRefProtocol.getDefaultInstance();
       }
-      
+
       public akka.remote.RemoteProtocol.ActorRefProtocol build() {
         akka.remote.RemoteProtocol.ActorRefProtocol result = buildPartial();
         if (!result.isInitialized()) {
@@ -2707,17 +3457,7 @@ public final class RemoteProtocol {
         }
         return result;
       }
-      
-      private akka.remote.RemoteProtocol.ActorRefProtocol buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        akka.remote.RemoteProtocol.ActorRefProtocol result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
       public akka.remote.RemoteProtocol.ActorRefProtocol buildPartial() {
         akka.remote.RemoteProtocol.ActorRefProtocol result = new akka.remote.RemoteProtocol.ActorRefProtocol(this);
         int from_bitField0_ = bitField0_;
@@ -2730,7 +3470,7 @@ public final class RemoteProtocol {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof akka.remote.RemoteProtocol.ActorRefProtocol) {
           return mergeFrom((akka.remote.RemoteProtocol.ActorRefProtocol)other);
@@ -2739,16 +3479,18 @@ public final class RemoteProtocol {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(akka.remote.RemoteProtocol.ActorRefProtocol other) {
         if (other == akka.remote.RemoteProtocol.ActorRefProtocol.getDefaultInstance()) return this;
         if (other.hasPath()) {
-          setPath(other.getPath());
+          bitField0_ |= 0x00000001;
+          path_ = other.path_;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         if (!hasPath()) {
           
@@ -2756,57 +3498,69 @@ public final class RemoteProtocol {
         }
         return true;
       }
-      
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              path_ = input.readBytes();
-              break;
-            }
+        akka.remote.RemoteProtocol.ActorRefProtocol parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (akka.remote.RemoteProtocol.ActorRefProtocol) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
+
       // required string path = 1;
       private java.lang.Object path_ = "";
+      /**
+       * <code>required string path = 1;</code>
+       */
       public boolean hasPath() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public String getPath() {
+      /**
+       * <code>required string path = 1;</code>
+       */
+      public java.lang.String getPath() {
         java.lang.Object ref = path_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           path_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setPath(String value) {
+      /**
+       * <code>required string path = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPathBytes() {
+        java.lang.Object ref = path_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          path_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string path = 1;</code>
+       */
+      public Builder setPath(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2815,399 +3569,126 @@ public final class RemoteProtocol {
         onChanged();
         return this;
       }
+      /**
+       * <code>required string path = 1;</code>
+       */
       public Builder clearPath() {
         bitField0_ = (bitField0_ & ~0x00000001);
         path_ = getDefaultInstance().getPath();
         onChanged();
         return this;
       }
-      void setPath(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000001;
+      /**
+       * <code>required string path = 1;</code>
+       */
+      public Builder setPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         path_ = value;
         onChanged();
+        return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:ActorRefProtocol)
     }
-    
+
     static {
       defaultInstance = new ActorRefProtocol(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:ActorRefProtocol)
   }
-  
+
   public interface MessageProtocolOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // required bytes message = 1;
+    /**
+     * <code>required bytes message = 1;</code>
+     */
     boolean hasMessage();
+    /**
+     * <code>required bytes message = 1;</code>
+     */
     com.google.protobuf.ByteString getMessage();
-    
+
     // required int32 serializerId = 2;
+    /**
+     * <code>required int32 serializerId = 2;</code>
+     */
     boolean hasSerializerId();
+    /**
+     * <code>required int32 serializerId = 2;</code>
+     */
     int getSerializerId();
-    
+
     // optional bytes messageManifest = 3;
+    /**
+     * <code>optional bytes messageManifest = 3;</code>
+     */
     boolean hasMessageManifest();
+    /**
+     * <code>optional bytes messageManifest = 3;</code>
+     */
     com.google.protobuf.ByteString getMessageManifest();
   }
+  /**
+   * Protobuf type {@code MessageProtocol}
+   *
+   * <pre>
+   **
+   * Defines a message.
+   * </pre>
+   */
   public static final class MessageProtocol extends
       com.google.protobuf.GeneratedMessage
       implements MessageProtocolOrBuilder {
     // Use MessageProtocol.newBuilder() to construct.
-    private MessageProtocol(Builder builder) {
+    private MessageProtocol(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private MessageProtocol(boolean noInit) {}
-    
+    private MessageProtocol(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final MessageProtocol defaultInstance;
     public static MessageProtocol getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public MessageProtocol getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return akka.remote.RemoteProtocol.internal_static_MessageProtocol_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return akka.remote.RemoteProtocol.internal_static_MessageProtocol_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // required bytes message = 1;
-    public static final int MESSAGE_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString message_;
-    public boolean hasMessage() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public com.google.protobuf.ByteString getMessage() {
-      return message_;
-    }
-    
-    // required int32 serializerId = 2;
-    public static final int SERIALIZERID_FIELD_NUMBER = 2;
-    private int serializerId_;
-    public boolean hasSerializerId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public int getSerializerId() {
-      return serializerId_;
-    }
-    
-    // optional bytes messageManifest = 3;
-    public static final int MESSAGEMANIFEST_FIELD_NUMBER = 3;
-    private com.google.protobuf.ByteString messageManifest_;
-    public boolean hasMessageManifest() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public com.google.protobuf.ByteString getMessageManifest() {
-      return messageManifest_;
-    }
-    
-    private void initFields() {
-      message_ = com.google.protobuf.ByteString.EMPTY;
-      serializerId_ = 0;
-      messageManifest_ = com.google.protobuf.ByteString.EMPTY;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      if (!hasMessage()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasSerializerId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, message_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt32(2, serializerId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, messageManifest_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, message_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, serializerId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, messageManifest_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
     }
-    
-    public static akka.remote.RemoteProtocol.MessageProtocol parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static akka.remote.RemoteProtocol.MessageProtocol parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static akka.remote.RemoteProtocol.MessageProtocol parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static akka.remote.RemoteProtocol.MessageProtocol parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static akka.remote.RemoteProtocol.MessageProtocol parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static akka.remote.RemoteProtocol.MessageProtocol parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static akka.remote.RemoteProtocol.MessageProtocol parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static akka.remote.RemoteProtocol.MessageProtocol parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static akka.remote.RemoteProtocol.MessageProtocol parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static akka.remote.RemoteProtocol.MessageProtocol parseFrom(
+    private MessageProtocol(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(akka.remote.RemoteProtocol.MessageProtocol prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements akka.remote.RemoteProtocol.MessageProtocolOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return akka.remote.RemoteProtocol.internal_static_MessageProtocol_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return akka.remote.RemoteProtocol.internal_static_MessageProtocol_fieldAccessorTable;
-      }
-      
-      // Construct using akka.remote.RemoteProtocol.MessageProtocol.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        message_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        serializerId_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        messageManifest_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return akka.remote.RemoteProtocol.MessageProtocol.getDescriptor();
-      }
-      
-      public akka.remote.RemoteProtocol.MessageProtocol getDefaultInstanceForType() {
-        return akka.remote.RemoteProtocol.MessageProtocol.getDefaultInstance();
-      }
-      
-      public akka.remote.RemoteProtocol.MessageProtocol build() {
-        akka.remote.RemoteProtocol.MessageProtocol result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private akka.remote.RemoteProtocol.MessageProtocol buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        akka.remote.RemoteProtocol.MessageProtocol result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public akka.remote.RemoteProtocol.MessageProtocol buildPartial() {
-        akka.remote.RemoteProtocol.MessageProtocol result = new akka.remote.RemoteProtocol.MessageProtocol(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.message_ = message_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.serializerId_ = serializerId_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.messageManifest_ = messageManifest_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof akka.remote.RemoteProtocol.MessageProtocol) {
-          return mergeFrom((akka.remote.RemoteProtocol.MessageProtocol)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(akka.remote.RemoteProtocol.MessageProtocol other) {
-        if (other == akka.remote.RemoteProtocol.MessageProtocol.getDefaultInstance()) return this;
-        if (other.hasMessage()) {
-          setMessage(other.getMessage());
-        }
-        if (other.hasSerializerId()) {
-          setSerializerId(other.getSerializerId());
-        }
-        if (other.hasMessageManifest()) {
-          setMessageManifest(other.getMessageManifest());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        if (!hasMessage()) {
-          
-          return false;
-        }
-        if (!hasSerializerId()) {
-          
-          return false;
-        }
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
+              done = true;
+              break;
             default: {
               if (!parseUnknownField(input, unknownFields,
                                      extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
+                done = true;
               }
               break;
             }
@@ -3228,18 +3709,391 @@ public final class RemoteProtocol {
             }
           }
         }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
       }
-      
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return akka.remote.RemoteProtocol.internal_static_MessageProtocol_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return akka.remote.RemoteProtocol.internal_static_MessageProtocol_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              akka.remote.RemoteProtocol.MessageProtocol.class, akka.remote.RemoteProtocol.MessageProtocol.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<MessageProtocol> PARSER =
+        new com.google.protobuf.AbstractParser<MessageProtocol>() {
+      public MessageProtocol parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MessageProtocol(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MessageProtocol> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required bytes message = 1;
+    public static final int MESSAGE_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString message_;
+    /**
+     * <code>required bytes message = 1;</code>
+     */
+    public boolean hasMessage() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required bytes message = 1;</code>
+     */
+    public com.google.protobuf.ByteString getMessage() {
+      return message_;
+    }
+
+    // required int32 serializerId = 2;
+    public static final int SERIALIZERID_FIELD_NUMBER = 2;
+    private int serializerId_;
+    /**
+     * <code>required int32 serializerId = 2;</code>
+     */
+    public boolean hasSerializerId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required int32 serializerId = 2;</code>
+     */
+    public int getSerializerId() {
+      return serializerId_;
+    }
+
+    // optional bytes messageManifest = 3;
+    public static final int MESSAGEMANIFEST_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString messageManifest_;
+    /**
+     * <code>optional bytes messageManifest = 3;</code>
+     */
+    public boolean hasMessageManifest() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional bytes messageManifest = 3;</code>
+     */
+    public com.google.protobuf.ByteString getMessageManifest() {
+      return messageManifest_;
+    }
+
+    private void initFields() {
+      message_ = com.google.protobuf.ByteString.EMPTY;
+      serializerId_ = 0;
+      messageManifest_ = com.google.protobuf.ByteString.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasMessage()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasSerializerId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, message_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, serializerId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, messageManifest_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, message_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, serializerId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, messageManifest_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static akka.remote.RemoteProtocol.MessageProtocol parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static akka.remote.RemoteProtocol.MessageProtocol parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static akka.remote.RemoteProtocol.MessageProtocol parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static akka.remote.RemoteProtocol.MessageProtocol parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static akka.remote.RemoteProtocol.MessageProtocol parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static akka.remote.RemoteProtocol.MessageProtocol parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static akka.remote.RemoteProtocol.MessageProtocol parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static akka.remote.RemoteProtocol.MessageProtocol parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static akka.remote.RemoteProtocol.MessageProtocol parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static akka.remote.RemoteProtocol.MessageProtocol parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(akka.remote.RemoteProtocol.MessageProtocol prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code MessageProtocol}
+     *
+     * <pre>
+     **
+     * Defines a message.
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements akka.remote.RemoteProtocol.MessageProtocolOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return akka.remote.RemoteProtocol.internal_static_MessageProtocol_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return akka.remote.RemoteProtocol.internal_static_MessageProtocol_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                akka.remote.RemoteProtocol.MessageProtocol.class, akka.remote.RemoteProtocol.MessageProtocol.Builder.class);
+      }
+
+      // Construct using akka.remote.RemoteProtocol.MessageProtocol.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        message_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        serializerId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        messageManifest_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return akka.remote.RemoteProtocol.internal_static_MessageProtocol_descriptor;
+      }
+
+      public akka.remote.RemoteProtocol.MessageProtocol getDefaultInstanceForType() {
+        return akka.remote.RemoteProtocol.MessageProtocol.getDefaultInstance();
+      }
+
+      public akka.remote.RemoteProtocol.MessageProtocol build() {
+        akka.remote.RemoteProtocol.MessageProtocol result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public akka.remote.RemoteProtocol.MessageProtocol buildPartial() {
+        akka.remote.RemoteProtocol.MessageProtocol result = new akka.remote.RemoteProtocol.MessageProtocol(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.message_ = message_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.serializerId_ = serializerId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.messageManifest_ = messageManifest_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof akka.remote.RemoteProtocol.MessageProtocol) {
+          return mergeFrom((akka.remote.RemoteProtocol.MessageProtocol)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(akka.remote.RemoteProtocol.MessageProtocol other) {
+        if (other == akka.remote.RemoteProtocol.MessageProtocol.getDefaultInstance()) return this;
+        if (other.hasMessage()) {
+          setMessage(other.getMessage());
+        }
+        if (other.hasSerializerId()) {
+          setSerializerId(other.getSerializerId());
+        }
+        if (other.hasMessageManifest()) {
+          setMessageManifest(other.getMessageManifest());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasMessage()) {
+          
+          return false;
+        }
+        if (!hasSerializerId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        akka.remote.RemoteProtocol.MessageProtocol parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (akka.remote.RemoteProtocol.MessageProtocol) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
       private int bitField0_;
-      
+
       // required bytes message = 1;
       private com.google.protobuf.ByteString message_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>required bytes message = 1;</code>
+       */
       public boolean hasMessage() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+      /**
+       * <code>required bytes message = 1;</code>
+       */
       public com.google.protobuf.ByteString getMessage() {
         return message_;
       }
+      /**
+       * <code>required bytes message = 1;</code>
+       */
       public Builder setMessage(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -3249,42 +4103,66 @@ public final class RemoteProtocol {
         onChanged();
         return this;
       }
+      /**
+       * <code>required bytes message = 1;</code>
+       */
       public Builder clearMessage() {
         bitField0_ = (bitField0_ & ~0x00000001);
         message_ = getDefaultInstance().getMessage();
         onChanged();
         return this;
       }
-      
+
       // required int32 serializerId = 2;
       private int serializerId_ ;
+      /**
+       * <code>required int32 serializerId = 2;</code>
+       */
       public boolean hasSerializerId() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+      /**
+       * <code>required int32 serializerId = 2;</code>
+       */
       public int getSerializerId() {
         return serializerId_;
       }
+      /**
+       * <code>required int32 serializerId = 2;</code>
+       */
       public Builder setSerializerId(int value) {
         bitField0_ |= 0x00000002;
         serializerId_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>required int32 serializerId = 2;</code>
+       */
       public Builder clearSerializerId() {
         bitField0_ = (bitField0_ & ~0x00000002);
         serializerId_ = 0;
         onChanged();
         return this;
       }
-      
+
       // optional bytes messageManifest = 3;
       private com.google.protobuf.ByteString messageManifest_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes messageManifest = 3;</code>
+       */
       public boolean hasMessageManifest() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+      /**
+       * <code>optional bytes messageManifest = 3;</code>
+       */
       public com.google.protobuf.ByteString getMessageManifest() {
         return messageManifest_;
       }
+      /**
+       * <code>optional bytes messageManifest = 3;</code>
+       */
       public Builder setMessageManifest(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -3294,106 +4172,220 @@ public final class RemoteProtocol {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional bytes messageManifest = 3;</code>
+       */
       public Builder clearMessageManifest() {
         bitField0_ = (bitField0_ & ~0x00000004);
         messageManifest_ = getDefaultInstance().getMessageManifest();
         onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:MessageProtocol)
     }
-    
+
     static {
       defaultInstance = new MessageProtocol(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:MessageProtocol)
   }
-  
+
   public interface MetadataEntryProtocolOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // required string key = 1;
+    /**
+     * <code>required string key = 1;</code>
+     */
     boolean hasKey();
-    String getKey();
-    
+    /**
+     * <code>required string key = 1;</code>
+     */
+    java.lang.String getKey();
+    /**
+     * <code>required string key = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getKeyBytes();
+
     // required bytes value = 2;
+    /**
+     * <code>required bytes value = 2;</code>
+     */
     boolean hasValue();
+    /**
+     * <code>required bytes value = 2;</code>
+     */
     com.google.protobuf.ByteString getValue();
   }
+  /**
+   * Protobuf type {@code MetadataEntryProtocol}
+   *
+   * <pre>
+   **
+   * Defines a meta data entry.
+   * </pre>
+   */
   public static final class MetadataEntryProtocol extends
       com.google.protobuf.GeneratedMessage
       implements MetadataEntryProtocolOrBuilder {
     // Use MetadataEntryProtocol.newBuilder() to construct.
-    private MetadataEntryProtocol(Builder builder) {
+    private MetadataEntryProtocol(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private MetadataEntryProtocol(boolean noInit) {}
-    
+    private MetadataEntryProtocol(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final MetadataEntryProtocol defaultInstance;
     public static MetadataEntryProtocol getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public MetadataEntryProtocol getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MetadataEntryProtocol(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              key_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              value_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return akka.remote.RemoteProtocol.internal_static_MetadataEntryProtocol_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return akka.remote.RemoteProtocol.internal_static_MetadataEntryProtocol_fieldAccessorTable;
+      return akka.remote.RemoteProtocol.internal_static_MetadataEntryProtocol_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              akka.remote.RemoteProtocol.MetadataEntryProtocol.class, akka.remote.RemoteProtocol.MetadataEntryProtocol.Builder.class);
     }
-    
+
+    public static com.google.protobuf.Parser<MetadataEntryProtocol> PARSER =
+        new com.google.protobuf.AbstractParser<MetadataEntryProtocol>() {
+      public MetadataEntryProtocol parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MetadataEntryProtocol(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MetadataEntryProtocol> getParserForType() {
+      return PARSER;
+    }
+
     private int bitField0_;
     // required string key = 1;
     public static final int KEY_FIELD_NUMBER = 1;
     private java.lang.Object key_;
+    /**
+     * <code>required string key = 1;</code>
+     */
     public boolean hasKey() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    public String getKey() {
+    /**
+     * <code>required string key = 1;</code>
+     */
+    public java.lang.String getKey() {
       java.lang.Object ref = key_;
-      if (ref instanceof String) {
-        return (String) ref;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           key_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getKeyBytes() {
+    /**
+     * <code>required string key = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKeyBytes() {
       java.lang.Object ref = key_;
-      if (ref instanceof String) {
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         key_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // required bytes value = 2;
     public static final int VALUE_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString value_;
+    /**
+     * <code>required bytes value = 2;</code>
+     */
     public boolean hasValue() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
+    /**
+     * <code>required bytes value = 2;</code>
+     */
     public com.google.protobuf.ByteString getValue() {
       return value_;
     }
-    
+
     private void initFields() {
       key_ = "";
       value_ = com.google.protobuf.ByteString.EMPTY;
@@ -3402,7 +4394,7 @@ public final class RemoteProtocol {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-      
+
       if (!hasKey()) {
         memoizedIsInitialized = 0;
         return false;
@@ -3414,7 +4406,7 @@ public final class RemoteProtocol {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -3426,12 +4418,12 @@ public final class RemoteProtocol {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -3445,94 +4437,88 @@ public final class RemoteProtocol {
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static akka.remote.RemoteProtocol.MetadataEntryProtocol parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static akka.remote.RemoteProtocol.MetadataEntryProtocol parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.MetadataEntryProtocol parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static akka.remote.RemoteProtocol.MetadataEntryProtocol parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.MetadataEntryProtocol parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static akka.remote.RemoteProtocol.MetadataEntryProtocol parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.MetadataEntryProtocol parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static akka.remote.RemoteProtocol.MetadataEntryProtocol parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.MetadataEntryProtocol parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static akka.remote.RemoteProtocol.MetadataEntryProtocol parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(akka.remote.RemoteProtocol.MetadataEntryProtocol prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code MetadataEntryProtocol}
+     *
+     * <pre>
+     **
+     * Defines a meta data entry.
+     * </pre>
+     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements akka.remote.RemoteProtocol.MetadataEntryProtocolOrBuilder {
@@ -3540,18 +4526,21 @@ public final class RemoteProtocol {
           getDescriptor() {
         return akka.remote.RemoteProtocol.internal_static_MetadataEntryProtocol_descriptor;
       }
-      
+
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return akka.remote.RemoteProtocol.internal_static_MetadataEntryProtocol_fieldAccessorTable;
+        return akka.remote.RemoteProtocol.internal_static_MetadataEntryProtocol_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                akka.remote.RemoteProtocol.MetadataEntryProtocol.class, akka.remote.RemoteProtocol.MetadataEntryProtocol.Builder.class);
       }
-      
+
       // Construct using akka.remote.RemoteProtocol.MetadataEntryProtocol.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -3562,7 +4551,7 @@ public final class RemoteProtocol {
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         key_ = "";
@@ -3571,20 +4560,20 @@ public final class RemoteProtocol {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return akka.remote.RemoteProtocol.MetadataEntryProtocol.getDescriptor();
+        return akka.remote.RemoteProtocol.internal_static_MetadataEntryProtocol_descriptor;
       }
-      
+
       public akka.remote.RemoteProtocol.MetadataEntryProtocol getDefaultInstanceForType() {
         return akka.remote.RemoteProtocol.MetadataEntryProtocol.getDefaultInstance();
       }
-      
+
       public akka.remote.RemoteProtocol.MetadataEntryProtocol build() {
         akka.remote.RemoteProtocol.MetadataEntryProtocol result = buildPartial();
         if (!result.isInitialized()) {
@@ -3592,17 +4581,7 @@ public final class RemoteProtocol {
         }
         return result;
       }
-      
-      private akka.remote.RemoteProtocol.MetadataEntryProtocol buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        akka.remote.RemoteProtocol.MetadataEntryProtocol result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
       public akka.remote.RemoteProtocol.MetadataEntryProtocol buildPartial() {
         akka.remote.RemoteProtocol.MetadataEntryProtocol result = new akka.remote.RemoteProtocol.MetadataEntryProtocol(this);
         int from_bitField0_ = bitField0_;
@@ -3619,7 +4598,7 @@ public final class RemoteProtocol {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof akka.remote.RemoteProtocol.MetadataEntryProtocol) {
           return mergeFrom((akka.remote.RemoteProtocol.MetadataEntryProtocol)other);
@@ -3628,11 +4607,13 @@ public final class RemoteProtocol {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(akka.remote.RemoteProtocol.MetadataEntryProtocol other) {
         if (other == akka.remote.RemoteProtocol.MetadataEntryProtocol.getDefaultInstance()) return this;
         if (other.hasKey()) {
-          setKey(other.getKey());
+          bitField0_ |= 0x00000001;
+          key_ = other.key_;
+          onChanged();
         }
         if (other.hasValue()) {
           setValue(other.getValue());
@@ -3640,7 +4621,7 @@ public final class RemoteProtocol {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         if (!hasKey()) {
           
@@ -3652,62 +4633,69 @@ public final class RemoteProtocol {
         }
         return true;
       }
-      
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              key_ = input.readBytes();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              value_ = input.readBytes();
-              break;
-            }
+        akka.remote.RemoteProtocol.MetadataEntryProtocol parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (akka.remote.RemoteProtocol.MetadataEntryProtocol) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
+
       // required string key = 1;
       private java.lang.Object key_ = "";
+      /**
+       * <code>required string key = 1;</code>
+       */
       public boolean hasKey() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public String getKey() {
+      /**
+       * <code>required string key = 1;</code>
+       */
+      public java.lang.String getKey() {
         java.lang.Object ref = key_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           key_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setKey(String value) {
+      /**
+       * <code>required string key = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string key = 1;</code>
+       */
+      public Builder setKey(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3716,26 +4704,46 @@ public final class RemoteProtocol {
         onChanged();
         return this;
       }
+      /**
+       * <code>required string key = 1;</code>
+       */
       public Builder clearKey() {
         bitField0_ = (bitField0_ & ~0x00000001);
         key_ = getDefaultInstance().getKey();
         onChanged();
         return this;
       }
-      void setKey(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000001;
+      /**
+       * <code>required string key = 1;</code>
+       */
+      public Builder setKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         key_ = value;
         onChanged();
+        return this;
       }
-      
+
       // required bytes value = 2;
       private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>required bytes value = 2;</code>
+       */
       public boolean hasValue() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+      /**
+       * <code>required bytes value = 2;</code>
+       */
       public com.google.protobuf.ByteString getValue() {
         return value_;
       }
+      /**
+       * <code>required bytes value = 2;</code>
+       */
       public Builder setValue(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -3745,446 +4753,123 @@ public final class RemoteProtocol {
         onChanged();
         return this;
       }
+      /**
+       * <code>required bytes value = 2;</code>
+       */
       public Builder clearValue() {
         bitField0_ = (bitField0_ & ~0x00000002);
         value_ = getDefaultInstance().getValue();
         onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:MetadataEntryProtocol)
     }
-    
+
     static {
       defaultInstance = new MetadataEntryProtocol(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:MetadataEntryProtocol)
   }
-  
+
   public interface AddressProtocolOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // required string system = 1;
+    /**
+     * <code>required string system = 1;</code>
+     */
     boolean hasSystem();
-    String getSystem();
-    
+    /**
+     * <code>required string system = 1;</code>
+     */
+    java.lang.String getSystem();
+    /**
+     * <code>required string system = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getSystemBytes();
+
     // required string hostname = 2;
+    /**
+     * <code>required string hostname = 2;</code>
+     */
     boolean hasHostname();
-    String getHostname();
-    
+    /**
+     * <code>required string hostname = 2;</code>
+     */
+    java.lang.String getHostname();
+    /**
+     * <code>required string hostname = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getHostnameBytes();
+
     // required uint32 port = 3;
+    /**
+     * <code>required uint32 port = 3;</code>
+     */
     boolean hasPort();
+    /**
+     * <code>required uint32 port = 3;</code>
+     */
     int getPort();
   }
+  /**
+   * Protobuf type {@code AddressProtocol}
+   *
+   * <pre>
+   **
+   * Defines a remote address.
+   * </pre>
+   */
   public static final class AddressProtocol extends
       com.google.protobuf.GeneratedMessage
       implements AddressProtocolOrBuilder {
     // Use AddressProtocol.newBuilder() to construct.
-    private AddressProtocol(Builder builder) {
+    private AddressProtocol(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private AddressProtocol(boolean noInit) {}
-    
+    private AddressProtocol(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final AddressProtocol defaultInstance;
     public static AddressProtocol getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public AddressProtocol getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return akka.remote.RemoteProtocol.internal_static_AddressProtocol_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return akka.remote.RemoteProtocol.internal_static_AddressProtocol_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // required string system = 1;
-    public static final int SYSTEM_FIELD_NUMBER = 1;
-    private java.lang.Object system_;
-    public boolean hasSystem() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public String getSystem() {
-      java.lang.Object ref = system_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          system_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getSystemBytes() {
-      java.lang.Object ref = system_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        system_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // required string hostname = 2;
-    public static final int HOSTNAME_FIELD_NUMBER = 2;
-    private java.lang.Object hostname_;
-    public boolean hasHostname() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public String getHostname() {
-      java.lang.Object ref = hostname_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          hostname_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getHostnameBytes() {
-      java.lang.Object ref = hostname_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        hostname_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // required uint32 port = 3;
-    public static final int PORT_FIELD_NUMBER = 3;
-    private int port_;
-    public boolean hasPort() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public int getPort() {
-      return port_;
-    }
-    
-    private void initFields() {
-      system_ = "";
-      hostname_ = "";
-      port_ = 0;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      if (!hasSystem()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasHostname()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasPort()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, getSystemBytes());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getHostnameBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeUInt32(3, port_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getSystemBytes());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getHostnameBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, port_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
     }
-    
-    public static akka.remote.RemoteProtocol.AddressProtocol parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static akka.remote.RemoteProtocol.AddressProtocol parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static akka.remote.RemoteProtocol.AddressProtocol parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static akka.remote.RemoteProtocol.AddressProtocol parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static akka.remote.RemoteProtocol.AddressProtocol parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static akka.remote.RemoteProtocol.AddressProtocol parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static akka.remote.RemoteProtocol.AddressProtocol parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static akka.remote.RemoteProtocol.AddressProtocol parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static akka.remote.RemoteProtocol.AddressProtocol parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static akka.remote.RemoteProtocol.AddressProtocol parseFrom(
+    private AddressProtocol(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(akka.remote.RemoteProtocol.AddressProtocol prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements akka.remote.RemoteProtocol.AddressProtocolOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return akka.remote.RemoteProtocol.internal_static_AddressProtocol_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return akka.remote.RemoteProtocol.internal_static_AddressProtocol_fieldAccessorTable;
-      }
-      
-      // Construct using akka.remote.RemoteProtocol.AddressProtocol.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        system_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        hostname_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
-        port_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return akka.remote.RemoteProtocol.AddressProtocol.getDescriptor();
-      }
-      
-      public akka.remote.RemoteProtocol.AddressProtocol getDefaultInstanceForType() {
-        return akka.remote.RemoteProtocol.AddressProtocol.getDefaultInstance();
-      }
-      
-      public akka.remote.RemoteProtocol.AddressProtocol build() {
-        akka.remote.RemoteProtocol.AddressProtocol result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private akka.remote.RemoteProtocol.AddressProtocol buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        akka.remote.RemoteProtocol.AddressProtocol result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public akka.remote.RemoteProtocol.AddressProtocol buildPartial() {
-        akka.remote.RemoteProtocol.AddressProtocol result = new akka.remote.RemoteProtocol.AddressProtocol(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.system_ = system_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.hostname_ = hostname_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.port_ = port_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof akka.remote.RemoteProtocol.AddressProtocol) {
-          return mergeFrom((akka.remote.RemoteProtocol.AddressProtocol)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(akka.remote.RemoteProtocol.AddressProtocol other) {
-        if (other == akka.remote.RemoteProtocol.AddressProtocol.getDefaultInstance()) return this;
-        if (other.hasSystem()) {
-          setSystem(other.getSystem());
-        }
-        if (other.hasHostname()) {
-          setHostname(other.getHostname());
-        }
-        if (other.hasPort()) {
-          setPort(other.getPort());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        if (!hasSystem()) {
-          
-          return false;
-        }
-        if (!hasHostname()) {
-          
-          return false;
-        }
-        if (!hasPort()) {
-          
-          return false;
-        }
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
+              done = true;
+              break;
             default: {
               if (!parseUnknownField(input, unknownFields,
                                      extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
+                done = true;
               }
               break;
             }
@@ -4205,26 +4890,483 @@ public final class RemoteProtocol {
             }
           }
         }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
       }
-      
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return akka.remote.RemoteProtocol.internal_static_AddressProtocol_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return akka.remote.RemoteProtocol.internal_static_AddressProtocol_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              akka.remote.RemoteProtocol.AddressProtocol.class, akka.remote.RemoteProtocol.AddressProtocol.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<AddressProtocol> PARSER =
+        new com.google.protobuf.AbstractParser<AddressProtocol>() {
+      public AddressProtocol parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AddressProtocol(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AddressProtocol> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required string system = 1;
+    public static final int SYSTEM_FIELD_NUMBER = 1;
+    private java.lang.Object system_;
+    /**
+     * <code>required string system = 1;</code>
+     */
+    public boolean hasSystem() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string system = 1;</code>
+     */
+    public java.lang.String getSystem() {
+      java.lang.Object ref = system_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          system_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string system = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSystemBytes() {
+      java.lang.Object ref = system_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        system_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required string hostname = 2;
+    public static final int HOSTNAME_FIELD_NUMBER = 2;
+    private java.lang.Object hostname_;
+    /**
+     * <code>required string hostname = 2;</code>
+     */
+    public boolean hasHostname() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string hostname = 2;</code>
+     */
+    public java.lang.String getHostname() {
+      java.lang.Object ref = hostname_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          hostname_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string hostname = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHostnameBytes() {
+      java.lang.Object ref = hostname_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        hostname_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required uint32 port = 3;
+    public static final int PORT_FIELD_NUMBER = 3;
+    private int port_;
+    /**
+     * <code>required uint32 port = 3;</code>
+     */
+    public boolean hasPort() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required uint32 port = 3;</code>
+     */
+    public int getPort() {
+      return port_;
+    }
+
+    private void initFields() {
+      system_ = "";
+      hostname_ = "";
+      port_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasSystem()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasHostname()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPort()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getSystemBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getHostnameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeUInt32(3, port_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getSystemBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getHostnameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, port_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static akka.remote.RemoteProtocol.AddressProtocol parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static akka.remote.RemoteProtocol.AddressProtocol parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static akka.remote.RemoteProtocol.AddressProtocol parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static akka.remote.RemoteProtocol.AddressProtocol parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static akka.remote.RemoteProtocol.AddressProtocol parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static akka.remote.RemoteProtocol.AddressProtocol parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static akka.remote.RemoteProtocol.AddressProtocol parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static akka.remote.RemoteProtocol.AddressProtocol parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static akka.remote.RemoteProtocol.AddressProtocol parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static akka.remote.RemoteProtocol.AddressProtocol parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(akka.remote.RemoteProtocol.AddressProtocol prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code AddressProtocol}
+     *
+     * <pre>
+     **
+     * Defines a remote address.
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements akka.remote.RemoteProtocol.AddressProtocolOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return akka.remote.RemoteProtocol.internal_static_AddressProtocol_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return akka.remote.RemoteProtocol.internal_static_AddressProtocol_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                akka.remote.RemoteProtocol.AddressProtocol.class, akka.remote.RemoteProtocol.AddressProtocol.Builder.class);
+      }
+
+      // Construct using akka.remote.RemoteProtocol.AddressProtocol.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        system_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        hostname_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        port_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return akka.remote.RemoteProtocol.internal_static_AddressProtocol_descriptor;
+      }
+
+      public akka.remote.RemoteProtocol.AddressProtocol getDefaultInstanceForType() {
+        return akka.remote.RemoteProtocol.AddressProtocol.getDefaultInstance();
+      }
+
+      public akka.remote.RemoteProtocol.AddressProtocol build() {
+        akka.remote.RemoteProtocol.AddressProtocol result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public akka.remote.RemoteProtocol.AddressProtocol buildPartial() {
+        akka.remote.RemoteProtocol.AddressProtocol result = new akka.remote.RemoteProtocol.AddressProtocol(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.system_ = system_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.hostname_ = hostname_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.port_ = port_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof akka.remote.RemoteProtocol.AddressProtocol) {
+          return mergeFrom((akka.remote.RemoteProtocol.AddressProtocol)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(akka.remote.RemoteProtocol.AddressProtocol other) {
+        if (other == akka.remote.RemoteProtocol.AddressProtocol.getDefaultInstance()) return this;
+        if (other.hasSystem()) {
+          bitField0_ |= 0x00000001;
+          system_ = other.system_;
+          onChanged();
+        }
+        if (other.hasHostname()) {
+          bitField0_ |= 0x00000002;
+          hostname_ = other.hostname_;
+          onChanged();
+        }
+        if (other.hasPort()) {
+          setPort(other.getPort());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasSystem()) {
+          
+          return false;
+        }
+        if (!hasHostname()) {
+          
+          return false;
+        }
+        if (!hasPort()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        akka.remote.RemoteProtocol.AddressProtocol parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (akka.remote.RemoteProtocol.AddressProtocol) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
       private int bitField0_;
-      
+
       // required string system = 1;
       private java.lang.Object system_ = "";
+      /**
+       * <code>required string system = 1;</code>
+       */
       public boolean hasSystem() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public String getSystem() {
+      /**
+       * <code>required string system = 1;</code>
+       */
+      public java.lang.String getSystem() {
         java.lang.Object ref = system_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           system_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setSystem(String value) {
+      /**
+       * <code>required string system = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSystemBytes() {
+        java.lang.Object ref = system_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          system_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string system = 1;</code>
+       */
+      public Builder setSystem(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4233,34 +5375,72 @@ public final class RemoteProtocol {
         onChanged();
         return this;
       }
+      /**
+       * <code>required string system = 1;</code>
+       */
       public Builder clearSystem() {
         bitField0_ = (bitField0_ & ~0x00000001);
         system_ = getDefaultInstance().getSystem();
         onChanged();
         return this;
       }
-      void setSystem(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000001;
+      /**
+       * <code>required string system = 1;</code>
+       */
+      public Builder setSystemBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         system_ = value;
         onChanged();
+        return this;
       }
-      
+
       // required string hostname = 2;
       private java.lang.Object hostname_ = "";
+      /**
+       * <code>required string hostname = 2;</code>
+       */
       public boolean hasHostname() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      public String getHostname() {
+      /**
+       * <code>required string hostname = 2;</code>
+       */
+      public java.lang.String getHostname() {
         java.lang.Object ref = hostname_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           hostname_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setHostname(String value) {
+      /**
+       * <code>required string hostname = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getHostnameBytes() {
+        java.lang.Object ref = hostname_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          hostname_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string hostname = 2;</code>
+       */
+      public Builder setHostname(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4269,154 +5449,298 @@ public final class RemoteProtocol {
         onChanged();
         return this;
       }
+      /**
+       * <code>required string hostname = 2;</code>
+       */
       public Builder clearHostname() {
         bitField0_ = (bitField0_ & ~0x00000002);
         hostname_ = getDefaultInstance().getHostname();
         onChanged();
         return this;
       }
-      void setHostname(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000002;
+      /**
+       * <code>required string hostname = 2;</code>
+       */
+      public Builder setHostnameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         hostname_ = value;
         onChanged();
+        return this;
       }
-      
+
       // required uint32 port = 3;
       private int port_ ;
+      /**
+       * <code>required uint32 port = 3;</code>
+       */
       public boolean hasPort() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+      /**
+       * <code>required uint32 port = 3;</code>
+       */
       public int getPort() {
         return port_;
       }
+      /**
+       * <code>required uint32 port = 3;</code>
+       */
       public Builder setPort(int value) {
         bitField0_ |= 0x00000004;
         port_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>required uint32 port = 3;</code>
+       */
       public Builder clearPort() {
         bitField0_ = (bitField0_ & ~0x00000004);
         port_ = 0;
         onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:AddressProtocol)
     }
-    
+
     static {
       defaultInstance = new AddressProtocol(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:AddressProtocol)
   }
-  
+
   public interface ExceptionProtocolOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // required string classname = 1;
+    /**
+     * <code>required string classname = 1;</code>
+     */
     boolean hasClassname();
-    String getClassname();
-    
+    /**
+     * <code>required string classname = 1;</code>
+     */
+    java.lang.String getClassname();
+    /**
+     * <code>required string classname = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getClassnameBytes();
+
     // required string message = 2;
+    /**
+     * <code>required string message = 2;</code>
+     */
     boolean hasMessage();
-    String getMessage();
+    /**
+     * <code>required string message = 2;</code>
+     */
+    java.lang.String getMessage();
+    /**
+     * <code>required string message = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
   }
+  /**
+   * Protobuf type {@code ExceptionProtocol}
+   *
+   * <pre>
+   **
+   * Defines an exception.
+   * </pre>
+   */
   public static final class ExceptionProtocol extends
       com.google.protobuf.GeneratedMessage
       implements ExceptionProtocolOrBuilder {
     // Use ExceptionProtocol.newBuilder() to construct.
-    private ExceptionProtocol(Builder builder) {
+    private ExceptionProtocol(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private ExceptionProtocol(boolean noInit) {}
-    
+    private ExceptionProtocol(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final ExceptionProtocol defaultInstance;
     public static ExceptionProtocol getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public ExceptionProtocol getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ExceptionProtocol(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              classname_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              message_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return akka.remote.RemoteProtocol.internal_static_ExceptionProtocol_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return akka.remote.RemoteProtocol.internal_static_ExceptionProtocol_fieldAccessorTable;
+      return akka.remote.RemoteProtocol.internal_static_ExceptionProtocol_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              akka.remote.RemoteProtocol.ExceptionProtocol.class, akka.remote.RemoteProtocol.ExceptionProtocol.Builder.class);
     }
-    
+
+    public static com.google.protobuf.Parser<ExceptionProtocol> PARSER =
+        new com.google.protobuf.AbstractParser<ExceptionProtocol>() {
+      public ExceptionProtocol parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ExceptionProtocol(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ExceptionProtocol> getParserForType() {
+      return PARSER;
+    }
+
     private int bitField0_;
     // required string classname = 1;
     public static final int CLASSNAME_FIELD_NUMBER = 1;
     private java.lang.Object classname_;
+    /**
+     * <code>required string classname = 1;</code>
+     */
     public boolean hasClassname() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    public String getClassname() {
+    /**
+     * <code>required string classname = 1;</code>
+     */
+    public java.lang.String getClassname() {
       java.lang.Object ref = classname_;
-      if (ref instanceof String) {
-        return (String) ref;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           classname_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getClassnameBytes() {
+    /**
+     * <code>required string classname = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClassnameBytes() {
       java.lang.Object ref = classname_;
-      if (ref instanceof String) {
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         classname_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // required string message = 2;
     public static final int MESSAGE_FIELD_NUMBER = 2;
     private java.lang.Object message_;
+    /**
+     * <code>required string message = 2;</code>
+     */
     public boolean hasMessage() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    public String getMessage() {
+    /**
+     * <code>required string message = 2;</code>
+     */
+    public java.lang.String getMessage() {
       java.lang.Object ref = message_;
-      if (ref instanceof String) {
-        return (String) ref;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           message_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getMessageBytes() {
+    /**
+     * <code>required string message = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
       java.lang.Object ref = message_;
-      if (ref instanceof String) {
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         message_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     private void initFields() {
       classname_ = "";
       message_ = "";
@@ -4425,7 +5749,7 @@ public final class RemoteProtocol {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-      
+
       if (!hasClassname()) {
         memoizedIsInitialized = 0;
         return false;
@@ -4437,7 +5761,7 @@ public final class RemoteProtocol {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -4449,12 +5773,12 @@ public final class RemoteProtocol {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -4468,94 +5792,88 @@ public final class RemoteProtocol {
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static akka.remote.RemoteProtocol.ExceptionProtocol parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static akka.remote.RemoteProtocol.ExceptionProtocol parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.ExceptionProtocol parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static akka.remote.RemoteProtocol.ExceptionProtocol parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.ExceptionProtocol parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static akka.remote.RemoteProtocol.ExceptionProtocol parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.ExceptionProtocol parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static akka.remote.RemoteProtocol.ExceptionProtocol parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.ExceptionProtocol parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static akka.remote.RemoteProtocol.ExceptionProtocol parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(akka.remote.RemoteProtocol.ExceptionProtocol prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code ExceptionProtocol}
+     *
+     * <pre>
+     **
+     * Defines an exception.
+     * </pre>
+     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements akka.remote.RemoteProtocol.ExceptionProtocolOrBuilder {
@@ -4563,18 +5881,21 @@ public final class RemoteProtocol {
           getDescriptor() {
         return akka.remote.RemoteProtocol.internal_static_ExceptionProtocol_descriptor;
       }
-      
+
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return akka.remote.RemoteProtocol.internal_static_ExceptionProtocol_fieldAccessorTable;
+        return akka.remote.RemoteProtocol.internal_static_ExceptionProtocol_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                akka.remote.RemoteProtocol.ExceptionProtocol.class, akka.remote.RemoteProtocol.ExceptionProtocol.Builder.class);
       }
-      
+
       // Construct using akka.remote.RemoteProtocol.ExceptionProtocol.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -4585,7 +5906,7 @@ public final class RemoteProtocol {
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         classname_ = "";
@@ -4594,20 +5915,20 @@ public final class RemoteProtocol {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return akka.remote.RemoteProtocol.ExceptionProtocol.getDescriptor();
+        return akka.remote.RemoteProtocol.internal_static_ExceptionProtocol_descriptor;
       }
-      
+
       public akka.remote.RemoteProtocol.ExceptionProtocol getDefaultInstanceForType() {
         return akka.remote.RemoteProtocol.ExceptionProtocol.getDefaultInstance();
       }
-      
+
       public akka.remote.RemoteProtocol.ExceptionProtocol build() {
         akka.remote.RemoteProtocol.ExceptionProtocol result = buildPartial();
         if (!result.isInitialized()) {
@@ -4615,17 +5936,7 @@ public final class RemoteProtocol {
         }
         return result;
       }
-      
-      private akka.remote.RemoteProtocol.ExceptionProtocol buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        akka.remote.RemoteProtocol.ExceptionProtocol result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
       public akka.remote.RemoteProtocol.ExceptionProtocol buildPartial() {
         akka.remote.RemoteProtocol.ExceptionProtocol result = new akka.remote.RemoteProtocol.ExceptionProtocol(this);
         int from_bitField0_ = bitField0_;
@@ -4642,7 +5953,7 @@ public final class RemoteProtocol {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof akka.remote.RemoteProtocol.ExceptionProtocol) {
           return mergeFrom((akka.remote.RemoteProtocol.ExceptionProtocol)other);
@@ -4651,19 +5962,23 @@ public final class RemoteProtocol {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(akka.remote.RemoteProtocol.ExceptionProtocol other) {
         if (other == akka.remote.RemoteProtocol.ExceptionProtocol.getDefaultInstance()) return this;
         if (other.hasClassname()) {
-          setClassname(other.getClassname());
+          bitField0_ |= 0x00000001;
+          classname_ = other.classname_;
+          onChanged();
         }
         if (other.hasMessage()) {
-          setMessage(other.getMessage());
+          bitField0_ |= 0x00000002;
+          message_ = other.message_;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         if (!hasClassname()) {
           
@@ -4675,62 +5990,69 @@ public final class RemoteProtocol {
         }
         return true;
       }
-      
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              classname_ = input.readBytes();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              message_ = input.readBytes();
-              break;
-            }
+        akka.remote.RemoteProtocol.ExceptionProtocol parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (akka.remote.RemoteProtocol.ExceptionProtocol) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
+
       // required string classname = 1;
       private java.lang.Object classname_ = "";
+      /**
+       * <code>required string classname = 1;</code>
+       */
       public boolean hasClassname() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public String getClassname() {
+      /**
+       * <code>required string classname = 1;</code>
+       */
+      public java.lang.String getClassname() {
         java.lang.Object ref = classname_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           classname_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setClassname(String value) {
+      /**
+       * <code>required string classname = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getClassnameBytes() {
+        java.lang.Object ref = classname_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          classname_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string classname = 1;</code>
+       */
+      public Builder setClassname(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4739,34 +6061,72 @@ public final class RemoteProtocol {
         onChanged();
         return this;
       }
+      /**
+       * <code>required string classname = 1;</code>
+       */
       public Builder clearClassname() {
         bitField0_ = (bitField0_ & ~0x00000001);
         classname_ = getDefaultInstance().getClassname();
         onChanged();
         return this;
       }
-      void setClassname(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000001;
+      /**
+       * <code>required string classname = 1;</code>
+       */
+      public Builder setClassnameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         classname_ = value;
         onChanged();
+        return this;
       }
-      
+
       // required string message = 2;
       private java.lang.Object message_ = "";
+      /**
+       * <code>required string message = 2;</code>
+       */
       public boolean hasMessage() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      public String getMessage() {
+      /**
+       * <code>required string message = 2;</code>
+       */
+      public java.lang.String getMessage() {
         java.lang.Object ref = message_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           message_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setMessage(String value) {
+      /**
+       * <code>required string message = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string message = 2;</code>
+       */
+      public Builder setMessage(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4775,111 +6135,268 @@ public final class RemoteProtocol {
         onChanged();
         return this;
       }
+      /**
+       * <code>required string message = 2;</code>
+       */
       public Builder clearMessage() {
         bitField0_ = (bitField0_ & ~0x00000002);
         message_ = getDefaultInstance().getMessage();
         onChanged();
         return this;
       }
-      void setMessage(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000002;
+      /**
+       * <code>required string message = 2;</code>
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         message_ = value;
         onChanged();
+        return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:ExceptionProtocol)
     }
-    
+
     static {
       defaultInstance = new ExceptionProtocol(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:ExceptionProtocol)
   }
-  
+
   public interface DurableMailboxMessageProtocolOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // required .ActorRefProtocol recipient = 1;
+    /**
+     * <code>required .ActorRefProtocol recipient = 1;</code>
+     */
     boolean hasRecipient();
+    /**
+     * <code>required .ActorRefProtocol recipient = 1;</code>
+     */
     akka.remote.RemoteProtocol.ActorRefProtocol getRecipient();
+    /**
+     * <code>required .ActorRefProtocol recipient = 1;</code>
+     */
     akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder getRecipientOrBuilder();
-    
+
     // optional .ActorRefProtocol sender = 2;
+    /**
+     * <code>optional .ActorRefProtocol sender = 2;</code>
+     */
     boolean hasSender();
+    /**
+     * <code>optional .ActorRefProtocol sender = 2;</code>
+     */
     akka.remote.RemoteProtocol.ActorRefProtocol getSender();
+    /**
+     * <code>optional .ActorRefProtocol sender = 2;</code>
+     */
     akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder getSenderOrBuilder();
-    
+
     // required bytes message = 3;
+    /**
+     * <code>required bytes message = 3;</code>
+     */
     boolean hasMessage();
+    /**
+     * <code>required bytes message = 3;</code>
+     */
     com.google.protobuf.ByteString getMessage();
   }
+  /**
+   * Protobuf type {@code DurableMailboxMessageProtocol}
+   *
+   * <pre>
+   **
+   * Defines the durable mailbox message.
+   * </pre>
+   */
   public static final class DurableMailboxMessageProtocol extends
       com.google.protobuf.GeneratedMessage
       implements DurableMailboxMessageProtocolOrBuilder {
     // Use DurableMailboxMessageProtocol.newBuilder() to construct.
-    private DurableMailboxMessageProtocol(Builder builder) {
+    private DurableMailboxMessageProtocol(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private DurableMailboxMessageProtocol(boolean noInit) {}
-    
+    private DurableMailboxMessageProtocol(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final DurableMailboxMessageProtocol defaultInstance;
     public static DurableMailboxMessageProtocol getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public DurableMailboxMessageProtocol getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DurableMailboxMessageProtocol(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              akka.remote.RemoteProtocol.ActorRefProtocol.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = recipient_.toBuilder();
+              }
+              recipient_ = input.readMessage(akka.remote.RemoteProtocol.ActorRefProtocol.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(recipient_);
+                recipient_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 18: {
+              akka.remote.RemoteProtocol.ActorRefProtocol.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = sender_.toBuilder();
+              }
+              sender_ = input.readMessage(akka.remote.RemoteProtocol.ActorRefProtocol.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sender_);
+                sender_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              message_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return akka.remote.RemoteProtocol.internal_static_DurableMailboxMessageProtocol_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return akka.remote.RemoteProtocol.internal_static_DurableMailboxMessageProtocol_fieldAccessorTable;
+      return akka.remote.RemoteProtocol.internal_static_DurableMailboxMessageProtocol_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              akka.remote.RemoteProtocol.DurableMailboxMessageProtocol.class, akka.remote.RemoteProtocol.DurableMailboxMessageProtocol.Builder.class);
     }
-    
+
+    public static com.google.protobuf.Parser<DurableMailboxMessageProtocol> PARSER =
+        new com.google.protobuf.AbstractParser<DurableMailboxMessageProtocol>() {
+      public DurableMailboxMessageProtocol parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DurableMailboxMessageProtocol(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DurableMailboxMessageProtocol> getParserForType() {
+      return PARSER;
+    }
+
     private int bitField0_;
     // required .ActorRefProtocol recipient = 1;
     public static final int RECIPIENT_FIELD_NUMBER = 1;
     private akka.remote.RemoteProtocol.ActorRefProtocol recipient_;
+    /**
+     * <code>required .ActorRefProtocol recipient = 1;</code>
+     */
     public boolean hasRecipient() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
+    /**
+     * <code>required .ActorRefProtocol recipient = 1;</code>
+     */
     public akka.remote.RemoteProtocol.ActorRefProtocol getRecipient() {
       return recipient_;
     }
+    /**
+     * <code>required .ActorRefProtocol recipient = 1;</code>
+     */
     public akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder getRecipientOrBuilder() {
       return recipient_;
     }
-    
+
     // optional .ActorRefProtocol sender = 2;
     public static final int SENDER_FIELD_NUMBER = 2;
     private akka.remote.RemoteProtocol.ActorRefProtocol sender_;
+    /**
+     * <code>optional .ActorRefProtocol sender = 2;</code>
+     */
     public boolean hasSender() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
+    /**
+     * <code>optional .ActorRefProtocol sender = 2;</code>
+     */
     public akka.remote.RemoteProtocol.ActorRefProtocol getSender() {
       return sender_;
     }
+    /**
+     * <code>optional .ActorRefProtocol sender = 2;</code>
+     */
     public akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder getSenderOrBuilder() {
       return sender_;
     }
-    
+
     // required bytes message = 3;
     public static final int MESSAGE_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString message_;
+    /**
+     * <code>required bytes message = 3;</code>
+     */
     public boolean hasMessage() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
+    /**
+     * <code>required bytes message = 3;</code>
+     */
     public com.google.protobuf.ByteString getMessage() {
       return message_;
     }
-    
+
     private void initFields() {
       recipient_ = akka.remote.RemoteProtocol.ActorRefProtocol.getDefaultInstance();
       sender_ = akka.remote.RemoteProtocol.ActorRefProtocol.getDefaultInstance();
@@ -4889,7 +6406,7 @@ public final class RemoteProtocol {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-      
+
       if (!hasRecipient()) {
         memoizedIsInitialized = 0;
         return false;
@@ -4911,7 +6428,7 @@ public final class RemoteProtocol {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -4926,12 +6443,12 @@ public final class RemoteProtocol {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -4949,94 +6466,88 @@ public final class RemoteProtocol {
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static akka.remote.RemoteProtocol.DurableMailboxMessageProtocol parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static akka.remote.RemoteProtocol.DurableMailboxMessageProtocol parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.DurableMailboxMessageProtocol parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static akka.remote.RemoteProtocol.DurableMailboxMessageProtocol parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.DurableMailboxMessageProtocol parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static akka.remote.RemoteProtocol.DurableMailboxMessageProtocol parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.DurableMailboxMessageProtocol parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static akka.remote.RemoteProtocol.DurableMailboxMessageProtocol parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static akka.remote.RemoteProtocol.DurableMailboxMessageProtocol parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static akka.remote.RemoteProtocol.DurableMailboxMessageProtocol parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(akka.remote.RemoteProtocol.DurableMailboxMessageProtocol prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code DurableMailboxMessageProtocol}
+     *
+     * <pre>
+     **
+     * Defines the durable mailbox message.
+     * </pre>
+     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements akka.remote.RemoteProtocol.DurableMailboxMessageProtocolOrBuilder {
@@ -5044,18 +6555,21 @@ public final class RemoteProtocol {
           getDescriptor() {
         return akka.remote.RemoteProtocol.internal_static_DurableMailboxMessageProtocol_descriptor;
       }
-      
+
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return akka.remote.RemoteProtocol.internal_static_DurableMailboxMessageProtocol_fieldAccessorTable;
+        return akka.remote.RemoteProtocol.internal_static_DurableMailboxMessageProtocol_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                akka.remote.RemoteProtocol.DurableMailboxMessageProtocol.class, akka.remote.RemoteProtocol.DurableMailboxMessageProtocol.Builder.class);
       }
-      
+
       // Construct using akka.remote.RemoteProtocol.DurableMailboxMessageProtocol.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -5068,7 +6582,7 @@ public final class RemoteProtocol {
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         if (recipientBuilder_ == null) {
@@ -5087,20 +6601,20 @@ public final class RemoteProtocol {
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return akka.remote.RemoteProtocol.DurableMailboxMessageProtocol.getDescriptor();
+        return akka.remote.RemoteProtocol.internal_static_DurableMailboxMessageProtocol_descriptor;
       }
-      
+
       public akka.remote.RemoteProtocol.DurableMailboxMessageProtocol getDefaultInstanceForType() {
         return akka.remote.RemoteProtocol.DurableMailboxMessageProtocol.getDefaultInstance();
       }
-      
+
       public akka.remote.RemoteProtocol.DurableMailboxMessageProtocol build() {
         akka.remote.RemoteProtocol.DurableMailboxMessageProtocol result = buildPartial();
         if (!result.isInitialized()) {
@@ -5108,17 +6622,7 @@ public final class RemoteProtocol {
         }
         return result;
       }
-      
-      private akka.remote.RemoteProtocol.DurableMailboxMessageProtocol buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        akka.remote.RemoteProtocol.DurableMailboxMessageProtocol result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
       public akka.remote.RemoteProtocol.DurableMailboxMessageProtocol buildPartial() {
         akka.remote.RemoteProtocol.DurableMailboxMessageProtocol result = new akka.remote.RemoteProtocol.DurableMailboxMessageProtocol(this);
         int from_bitField0_ = bitField0_;
@@ -5147,7 +6651,7 @@ public final class RemoteProtocol {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof akka.remote.RemoteProtocol.DurableMailboxMessageProtocol) {
           return mergeFrom((akka.remote.RemoteProtocol.DurableMailboxMessageProtocol)other);
@@ -5156,7 +6660,7 @@ public final class RemoteProtocol {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(akka.remote.RemoteProtocol.DurableMailboxMessageProtocol other) {
         if (other == akka.remote.RemoteProtocol.DurableMailboxMessageProtocol.getDefaultInstance()) return this;
         if (other.hasRecipient()) {
@@ -5171,7 +6675,7 @@ public final class RemoteProtocol {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         if (!hasRecipient()) {
           
@@ -5193,66 +6697,39 @@ public final class RemoteProtocol {
         }
         return true;
       }
-      
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              akka.remote.RemoteProtocol.ActorRefProtocol.Builder subBuilder = akka.remote.RemoteProtocol.ActorRefProtocol.newBuilder();
-              if (hasRecipient()) {
-                subBuilder.mergeFrom(getRecipient());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setRecipient(subBuilder.buildPartial());
-              break;
-            }
-            case 18: {
-              akka.remote.RemoteProtocol.ActorRefProtocol.Builder subBuilder = akka.remote.RemoteProtocol.ActorRefProtocol.newBuilder();
-              if (hasSender()) {
-                subBuilder.mergeFrom(getSender());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setSender(subBuilder.buildPartial());
-              break;
-            }
-            case 26: {
-              bitField0_ |= 0x00000004;
-              message_ = input.readBytes();
-              break;
-            }
+        akka.remote.RemoteProtocol.DurableMailboxMessageProtocol parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (akka.remote.RemoteProtocol.DurableMailboxMessageProtocol) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
+
       // required .ActorRefProtocol recipient = 1;
       private akka.remote.RemoteProtocol.ActorRefProtocol recipient_ = akka.remote.RemoteProtocol.ActorRefProtocol.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           akka.remote.RemoteProtocol.ActorRefProtocol, akka.remote.RemoteProtocol.ActorRefProtocol.Builder, akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder> recipientBuilder_;
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       public boolean hasRecipient() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       public akka.remote.RemoteProtocol.ActorRefProtocol getRecipient() {
         if (recipientBuilder_ == null) {
           return recipient_;
@@ -5260,6 +6737,9 @@ public final class RemoteProtocol {
           return recipientBuilder_.getMessage();
         }
       }
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       public Builder setRecipient(akka.remote.RemoteProtocol.ActorRefProtocol value) {
         if (recipientBuilder_ == null) {
           if (value == null) {
@@ -5273,6 +6753,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000001;
         return this;
       }
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       public Builder setRecipient(
           akka.remote.RemoteProtocol.ActorRefProtocol.Builder builderForValue) {
         if (recipientBuilder_ == null) {
@@ -5284,6 +6767,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000001;
         return this;
       }
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       public Builder mergeRecipient(akka.remote.RemoteProtocol.ActorRefProtocol value) {
         if (recipientBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001) &&
@@ -5300,6 +6786,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000001;
         return this;
       }
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       public Builder clearRecipient() {
         if (recipientBuilder_ == null) {
           recipient_ = akka.remote.RemoteProtocol.ActorRefProtocol.getDefaultInstance();
@@ -5310,11 +6799,17 @@ public final class RemoteProtocol {
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       public akka.remote.RemoteProtocol.ActorRefProtocol.Builder getRecipientBuilder() {
         bitField0_ |= 0x00000001;
         onChanged();
         return getRecipientFieldBuilder().getBuilder();
       }
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       public akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder getRecipientOrBuilder() {
         if (recipientBuilder_ != null) {
           return recipientBuilder_.getMessageOrBuilder();
@@ -5322,6 +6817,9 @@ public final class RemoteProtocol {
           return recipient_;
         }
       }
+      /**
+       * <code>required .ActorRefProtocol recipient = 1;</code>
+       */
       private com.google.protobuf.SingleFieldBuilder<
           akka.remote.RemoteProtocol.ActorRefProtocol, akka.remote.RemoteProtocol.ActorRefProtocol.Builder, akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder> 
           getRecipientFieldBuilder() {
@@ -5335,14 +6833,20 @@ public final class RemoteProtocol {
         }
         return recipientBuilder_;
       }
-      
+
       // optional .ActorRefProtocol sender = 2;
       private akka.remote.RemoteProtocol.ActorRefProtocol sender_ = akka.remote.RemoteProtocol.ActorRefProtocol.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           akka.remote.RemoteProtocol.ActorRefProtocol, akka.remote.RemoteProtocol.ActorRefProtocol.Builder, akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder> senderBuilder_;
+      /**
+       * <code>optional .ActorRefProtocol sender = 2;</code>
+       */
       public boolean hasSender() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+      /**
+       * <code>optional .ActorRefProtocol sender = 2;</code>
+       */
       public akka.remote.RemoteProtocol.ActorRefProtocol getSender() {
         if (senderBuilder_ == null) {
           return sender_;
@@ -5350,6 +6854,9 @@ public final class RemoteProtocol {
           return senderBuilder_.getMessage();
         }
       }
+      /**
+       * <code>optional .ActorRefProtocol sender = 2;</code>
+       */
       public Builder setSender(akka.remote.RemoteProtocol.ActorRefProtocol value) {
         if (senderBuilder_ == null) {
           if (value == null) {
@@ -5363,6 +6870,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000002;
         return this;
       }
+      /**
+       * <code>optional .ActorRefProtocol sender = 2;</code>
+       */
       public Builder setSender(
           akka.remote.RemoteProtocol.ActorRefProtocol.Builder builderForValue) {
         if (senderBuilder_ == null) {
@@ -5374,6 +6884,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000002;
         return this;
       }
+      /**
+       * <code>optional .ActorRefProtocol sender = 2;</code>
+       */
       public Builder mergeSender(akka.remote.RemoteProtocol.ActorRefProtocol value) {
         if (senderBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
@@ -5390,6 +6903,9 @@ public final class RemoteProtocol {
         bitField0_ |= 0x00000002;
         return this;
       }
+      /**
+       * <code>optional .ActorRefProtocol sender = 2;</code>
+       */
       public Builder clearSender() {
         if (senderBuilder_ == null) {
           sender_ = akka.remote.RemoteProtocol.ActorRefProtocol.getDefaultInstance();
@@ -5400,11 +6916,17 @@ public final class RemoteProtocol {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
+      /**
+       * <code>optional .ActorRefProtocol sender = 2;</code>
+       */
       public akka.remote.RemoteProtocol.ActorRefProtocol.Builder getSenderBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
         return getSenderFieldBuilder().getBuilder();
       }
+      /**
+       * <code>optional .ActorRefProtocol sender = 2;</code>
+       */
       public akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder getSenderOrBuilder() {
         if (senderBuilder_ != null) {
           return senderBuilder_.getMessageOrBuilder();
@@ -5412,6 +6934,9 @@ public final class RemoteProtocol {
           return sender_;
         }
       }
+      /**
+       * <code>optional .ActorRefProtocol sender = 2;</code>
+       */
       private com.google.protobuf.SingleFieldBuilder<
           akka.remote.RemoteProtocol.ActorRefProtocol, akka.remote.RemoteProtocol.ActorRefProtocol.Builder, akka.remote.RemoteProtocol.ActorRefProtocolOrBuilder> 
           getSenderFieldBuilder() {
@@ -5425,15 +6950,24 @@ public final class RemoteProtocol {
         }
         return senderBuilder_;
       }
-      
+
       // required bytes message = 3;
       private com.google.protobuf.ByteString message_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>required bytes message = 3;</code>
+       */
       public boolean hasMessage() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+      /**
+       * <code>required bytes message = 3;</code>
+       */
       public com.google.protobuf.ByteString getMessage() {
         return message_;
       }
+      /**
+       * <code>required bytes message = 3;</code>
+       */
       public Builder setMessage(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -5443,24 +6977,27 @@ public final class RemoteProtocol {
         onChanged();
         return this;
       }
+      /**
+       * <code>required bytes message = 3;</code>
+       */
       public Builder clearMessage() {
         bitField0_ = (bitField0_ & ~0x00000004);
         message_ = getDefaultInstance().getMessage();
         onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:DurableMailboxMessageProtocol)
     }
-    
+
     static {
       defaultInstance = new DurableMailboxMessageProtocol(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:DurableMailboxMessageProtocol)
   }
-  
+
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_AkkaRemoteProtocol_descriptor;
   private static
@@ -5506,7 +7043,7 @@ public final class RemoteProtocol {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_DurableMailboxMessageProtocol_fieldAccessorTable;
-  
+
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
@@ -5553,73 +7090,55 @@ public final class RemoteProtocol {
           internal_static_AkkaRemoteProtocol_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AkkaRemoteProtocol_descriptor,
-              new java.lang.String[] { "Message", "Instruction", },
-              akka.remote.RemoteProtocol.AkkaRemoteProtocol.class,
-              akka.remote.RemoteProtocol.AkkaRemoteProtocol.Builder.class);
+              new java.lang.String[] { "Message", "Instruction", });
           internal_static_RemoteMessageProtocol_descriptor =
             getDescriptor().getMessageTypes().get(1);
           internal_static_RemoteMessageProtocol_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_RemoteMessageProtocol_descriptor,
-              new java.lang.String[] { "Recipient", "Message", "Sender", "Metadata", },
-              akka.remote.RemoteProtocol.RemoteMessageProtocol.class,
-              akka.remote.RemoteProtocol.RemoteMessageProtocol.Builder.class);
+              new java.lang.String[] { "Recipient", "Message", "Sender", "Metadata", });
           internal_static_RemoteControlProtocol_descriptor =
             getDescriptor().getMessageTypes().get(2);
           internal_static_RemoteControlProtocol_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_RemoteControlProtocol_descriptor,
-              new java.lang.String[] { "CommandType", "Cookie", "Origin", },
-              akka.remote.RemoteProtocol.RemoteControlProtocol.class,
-              akka.remote.RemoteProtocol.RemoteControlProtocol.Builder.class);
+              new java.lang.String[] { "CommandType", "Cookie", "Origin", });
           internal_static_ActorRefProtocol_descriptor =
             getDescriptor().getMessageTypes().get(3);
           internal_static_ActorRefProtocol_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ActorRefProtocol_descriptor,
-              new java.lang.String[] { "Path", },
-              akka.remote.RemoteProtocol.ActorRefProtocol.class,
-              akka.remote.RemoteProtocol.ActorRefProtocol.Builder.class);
+              new java.lang.String[] { "Path", });
           internal_static_MessageProtocol_descriptor =
             getDescriptor().getMessageTypes().get(4);
           internal_static_MessageProtocol_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_MessageProtocol_descriptor,
-              new java.lang.String[] { "Message", "SerializerId", "MessageManifest", },
-              akka.remote.RemoteProtocol.MessageProtocol.class,
-              akka.remote.RemoteProtocol.MessageProtocol.Builder.class);
+              new java.lang.String[] { "Message", "SerializerId", "MessageManifest", });
           internal_static_MetadataEntryProtocol_descriptor =
             getDescriptor().getMessageTypes().get(5);
           internal_static_MetadataEntryProtocol_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_MetadataEntryProtocol_descriptor,
-              new java.lang.String[] { "Key", "Value", },
-              akka.remote.RemoteProtocol.MetadataEntryProtocol.class,
-              akka.remote.RemoteProtocol.MetadataEntryProtocol.Builder.class);
+              new java.lang.String[] { "Key", "Value", });
           internal_static_AddressProtocol_descriptor =
             getDescriptor().getMessageTypes().get(6);
           internal_static_AddressProtocol_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AddressProtocol_descriptor,
-              new java.lang.String[] { "System", "Hostname", "Port", },
-              akka.remote.RemoteProtocol.AddressProtocol.class,
-              akka.remote.RemoteProtocol.AddressProtocol.Builder.class);
+              new java.lang.String[] { "System", "Hostname", "Port", });
           internal_static_ExceptionProtocol_descriptor =
             getDescriptor().getMessageTypes().get(7);
           internal_static_ExceptionProtocol_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ExceptionProtocol_descriptor,
-              new java.lang.String[] { "Classname", "Message", },
-              akka.remote.RemoteProtocol.ExceptionProtocol.class,
-              akka.remote.RemoteProtocol.ExceptionProtocol.Builder.class);
+              new java.lang.String[] { "Classname", "Message", });
           internal_static_DurableMailboxMessageProtocol_descriptor =
             getDescriptor().getMessageTypes().get(8);
           internal_static_DurableMailboxMessageProtocol_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_DurableMailboxMessageProtocol_descriptor,
-              new java.lang.String[] { "Recipient", "Sender", "Message", },
-              akka.remote.RemoteProtocol.DurableMailboxMessageProtocol.class,
-              akka.remote.RemoteProtocol.DurableMailboxMessageProtocol.Builder.class);
+              new java.lang.String[] { "Recipient", "Sender", "Message", });
           return null;
         }
       };
@@ -5628,6 +7147,6 @@ public final class RemoteProtocol {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
   }
-  
+
   // @@protoc_insertion_point(outer_class_scope)
 }

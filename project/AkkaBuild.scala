@@ -20,7 +20,7 @@ object AkkaBuild extends Build {
 
   lazy val buildSettings = Seq(
     organization := "com.typesafe.akka",
-    version      := "2.0.5",
+    version      := "2.0.5-protobuf-2.5",
     scalaVersion := "2.9.2"
   )
 
@@ -537,7 +537,7 @@ object Dependency {
     val Jetty        = "7.4.0.v20110414"
     val Logback      = "1.0.4"
     val Netty        = "3.5.4.Final"
-    val Protobuf     = "2.4.1"
+    val Protobuf     = "2.5.0"
     val Rabbit       = "2.3.1"
     val ScalaStm     = "0.5"
     val Scalatest    = "1.6.1"
